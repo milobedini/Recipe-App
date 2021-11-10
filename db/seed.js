@@ -16,7 +16,12 @@ const seedDatabase = async () => {
     const users = await User.create(userData)
     console.log(`DB has been seeded with ${users.length} users`)
 
-    const recipes = await Recipe.create(recipeData)
+    const recipeWithOwners = recipeData.map(recipe => {
+      recipe.owner = users[0]._id
+      return recipe
+    })
+
+    const recipes = await Recipe.create(recipeWithOwners)
     console.log(`DB has been seeded with ${recipes.length} recipes`)
 
     await mongoose.connection.close()
