@@ -6,8 +6,12 @@
   "author": "Milo Bedini <milobedini64@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "serve": "npx nodemon index.js"
+  },
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^6.0.12"
+    "mongoose": "^6.0.12",
+    "mongoose-unique-validator": "^3.0.0"
   }
 }
