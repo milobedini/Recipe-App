@@ -1,0 +1,13 @@
+{
+  "name": "Recipe-App",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/milobedini/Recipe-App.git",
+  "author": "Milo Bedini <milobedini64@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.12"
+  }
+}
