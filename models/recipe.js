@@ -3,6 +3,7 @@ import uniqueValidator from "mongoose-unique-validator"
 
 const recipeSchema = new mongoose.Schema({
   name: { type: String, required: true, maxlength: 75 },
+  image: { type: String, required: true},
   ingredients: [{ type: String, required: true }],
   categories: [{ type: String, required: true }],
   prepTime: { type: Number, required: true, min: 0 },
@@ -12,6 +13,7 @@ const recipeSchema = new mongoose.Schema({
   servings: { type: Number, required: true, min: 1 },
   calories: { type: Number, min: 1 },
   allergens: [{ type: String, required: true }],
+  video: {type: String},
   // comments
   // likes/rating
   // owner

@@ -1,6 +1,7 @@
 export default [
 {
     name: "Yin",
+    image: "image url",
     ingredients: ["apples"],
     categories: ["apples"],
     prepTime: 10,
