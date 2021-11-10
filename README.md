@@ -1,2 +1,3 @@
 # Recipe-App
-GA Project 3
+
+GA Project 3 - Recipe App
