@@ -16,9 +16,6 @@ const ShoppingListShow = () => {
   const addQuantity = (quantity) => {
     setQuantities([...quantities, quantity])
   }
-  // const removeQuantity = (quantity) => {
-  //   setQuantities(quantities.filter((x) => x !== quantity))
-  // }
 
   return (
     <>
@@ -27,7 +24,6 @@ const ShoppingListShow = () => {
         items={items}
         removeItem={removeItem}
         quantities={quantities}
-        // removeQuantity={removeQuantity}
       />
     </>
   )
