@@ -16,9 +16,11 @@ const recipeSchema = new mongoose.Schema({
   video: {type: String},
   // comments
   // likes/rating
-  // owner
+  owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true}
   //mark as tried/eaten
 })
+
+recipeSchema.set('toJSON', { virtuals: true })
 
 recipeSchema.plugin(uniqueValidator)
 
