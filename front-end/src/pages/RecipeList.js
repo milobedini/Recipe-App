@@ -16,7 +16,6 @@ const RecipeList = () => {
 
       const response = await axios(config)
       setRecipes(response.data)
-      console.log(response.data)
     }
     fetchRecipes()
   }, [])
