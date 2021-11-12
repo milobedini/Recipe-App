@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { getToken } from './auth.js'
 
-const baseUrl = 'https://localhost:4000/api'
+const baseUrl = "https://localhost:4000/api"
 
 export const fetchRecipes = async () => {
   const config = {
@@ -15,11 +15,12 @@ export const fetchRecipes = async () => {
 
 export const fetchRecipe = async (id) => {
   const config = {
-    method: 'get',
+    method: "get",
     url: `${baseUrl}/recipes/${id}`,
     headers: {},
   }
   const response = await axios(config)
+  console.log(response.data)
   return response.data
 }
 
