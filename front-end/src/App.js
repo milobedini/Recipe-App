@@ -1,22 +1,20 @@
 import './App.css'
-import { useEffect } from 'react'
-import axios from 'axios'
+// import { useEffect } from 'react'
+// import axios from 'axios'
+import RecipeList from './pages/RecipeList'
+import ShoppingListShow from './pages/ShoppingListShow'
 
 
 
 function App() {
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const { data } = await axios.get('/api/recipes')
-        console.log(data)
-      } catch (err) {
-        console.log(err)
-      }
-    }
-    getData()
-  }, [])
-
-  return <h2> Recipes</h2>
+  return (
+    <>
+      <h2> Recipes</h2>
+      <div>
+        <RecipeList />
+        <ShoppingListShow />
+      </div>
+    </>
+  )
 }
 export default App
