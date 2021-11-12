@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
-import RecipeCard from '../components/RecipeCard'
-import axios from 'axios'
-import '../styles/cards.css'
+import { useState, useEffect } from "react"
+import RecipeCard from "../components/RecipeCard"
+import "../styles/cards.css"
+import { fetchRecipes } from "../helpers/api"
+import axios from "axios"
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([])
@@ -9,8 +10,8 @@ const RecipeList = () => {
   useEffect(() => {
     async function fetchRecipes() {
       const config = {
-        method: 'get',
-        url: '/api/recipes',
+        method: "get",
+        url: "/api/recipes",
         headers: {},
       }
 
@@ -22,15 +23,17 @@ const RecipeList = () => {
   }, [])
 
   return (
-    <div>
-      <ul className="card_wrapper">
-        {recipes.map((recipe) => (
-          <li key={recipe._id}>
-            <RecipeCard {...recipe} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <div>
+        <ul className="card_wrapper">
+          {recipes.map((recipe) => (
+            <li key={recipe._id}>
+              <RecipeCard {...recipe} />
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   )
 }
 
