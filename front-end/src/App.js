@@ -7,7 +7,6 @@ import RecipeList from "./pages/RecipeList"
 // import ShoppingListShow from './pages/ShoppingListShow'
 // import RecipeShow from './pages/RecipeShow'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
-import RecipeList from "./pages/RecipeList"
 import ShoppingListShow from "./pages/ShoppingListShow"
 
 function App() {

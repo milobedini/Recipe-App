@@ -1,6 +1,6 @@
-import { useParams } from 'react-router'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useParams } from "react-router"
+import { useState, useEffect } from "react"
+import axios from "axios"
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
@@ -17,7 +17,7 @@ const RecipeShow = () => {
       }
     }
     fetchRecipes()
-  }, [id)
+  }, [id])
 
   return (
     <section>
