@@ -15,7 +15,7 @@ const RecipeAdd = () => {
         servings: '',
         calories: '',
         allergens: [],
-        video: ''
+        video: '',
     })
 
     const [errorInfo, setErrorInfo] = useState({})
