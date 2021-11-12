@@ -1,0 +1,14 @@
+nav {
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+a {
+  color: unset;
+  text-decoration: none;
+}
+a:hover {
+  color: lightcoral;
+}

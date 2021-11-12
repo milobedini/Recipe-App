@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import RecipeCard from "../components/RecipeCard"
 import "../styles/cards.css"
-import { fetchRecipes } from "../helpers/api"
 import axios from "axios"
 
 const RecipeList = () => {
