@@ -1,4 +1,5 @@
 import React from "react"
+import NewRecipesList from "./NewRecipesList"
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <h3>Featured Content below:</h3>
       <p>Most recent recipes</p>
       <p>Top rated recipes</p>
+      <NewRecipesList />
     </>
   )
 }
