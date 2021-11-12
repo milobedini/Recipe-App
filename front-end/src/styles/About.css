@@ -1,0 +1,38 @@
+.profiles {
+  display: flex;
+  justify-content: space-around;
+  gap: 10rem;
+  text-align: center;
+}
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profiles a {
+  text-decoration: none;
+  color: rgb(35, 88, 145);
+  font-style: italic;
+}
+.profiles img {
+  height: 150px;
+  width: 700px;
+}
+
+#info {
+  font-family: "Londrina Shadow", cursive;
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.about h1 {
+  font-family: "Londrina Shadow", cursive;
+  font-size: 4rem;
+  font-weight: bold;
+}
+.about h2 {
+  font-family: "Londrina Shadow", cursive;
+  font-size: 150%;
+  font-weight: bold;
+}

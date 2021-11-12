@@ -1,13 +1,14 @@
 import { removeToken } from "../helpers/auth"
-import { Link, useHistory } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import "../styles/Nav.css"
 
 const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleLogout = () => {
     removeToken()
     setIsLoggedIn(false)
-    history.push("/")
+    navigate.push("/")
   }
   return (
     <nav>
@@ -19,6 +20,9 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
           <Link to="/recipes">Browse</Link>
         </li>
         <li>{/* Link to Search */}Search</li>
+        <li>
+          <Link to="/shopping-list">Shopping List</Link>
+        </li>
         <li>
           <Link to="/about">About</Link>
         </li>
