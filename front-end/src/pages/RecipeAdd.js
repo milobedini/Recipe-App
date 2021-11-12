@@ -1,6 +1,6 @@
 import axios from 'axios'
-import RecipeForm from '../components/RecipeForm'
 import { useState } from 'react'
+import RecipeForm from '../components/RecipeForm'
 
 const RecipeAdd = () => {
     const [data, setData] = useState({
@@ -31,7 +31,7 @@ const RecipeAdd = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const config = ('/api/recipes', data)
+        const config = getAxiosRequestConfig('/recipes', data)
         try {
             const response = await axios(config).catch(handleError)
             console.log(response.data)
