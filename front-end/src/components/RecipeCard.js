@@ -1,6 +1,5 @@
-// const { Link } = require('react-router-dom')
 import { FaHeart, FaStar, FaRegClock } from 'react-icons/fa'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../styles/cards.css'
 
 const RecipeCard = ({ name, image, likedBy, _id, cookTime }) => {

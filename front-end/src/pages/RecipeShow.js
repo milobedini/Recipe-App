@@ -4,26 +4,23 @@ import axios from 'axios'
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
-  const id = '618d86a57c579256432a6df2'
+  const { id } = useParams
 
   useEffect(() => {
-    async function fetchRecipes() {
-      const config = {
-        method: 'get',
-        url: `/api/recipes/${id}`,
-        headers: {},
+    const fetchRecipes = async (id) => {
+      try {
+        const { data } = await axios.get(`api/recipes/${id}`)
+        setRecipe(data)
+        console.log(data)
+      } catch (err) {
+        console.log(err)
       }
-
-      const response = await axios(config)
-      setRecipe(response.data)
-      console.log(response.data)
     }
     fetchRecipes()
-  }, [])
+  }, [id)
 
   return (
     <section>
-      <p> {recipe.name} hello</p>
       <p>hello</p>
       {/* <h1>{recipe.name}</h1>
       {/* <p>
