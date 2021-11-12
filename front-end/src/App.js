@@ -8,6 +8,7 @@ import RecipeList from "./pages/RecipeList"
 // import RecipeShow from './pages/RecipeShow'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ShoppingListShow from "./pages/ShoppingListShow"
+import RecipeShow from "./pages/RecipeShow"
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -26,6 +27,7 @@ function App() {
         <h2> Recipes</h2>
         <Routes>
           <Route path="/recipes" element={<RecipeList />} />
+          <Route path="/recipes/:id" element={<RecipeShow />} />
           {/* <Route path= {`api/shoppinglist} component={ShoppingListShow} /> */}
           {/* <Route path={'api/recipes/:id'} element={RecipeShow} /> */}
         </Routes>

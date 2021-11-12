@@ -26,7 +26,11 @@ const RecipeCard = ({ name, image, likedBy, _id, cookTime }) => {
             </p>
           </div>
         </div>
-        <div className="title"></div>
+        <div className="title">
+          <h3>
+            <Link to={`/recipes/${_id}`}>{name}</Link>
+          </h3>
+        </div>
       </div>
     </>
   )

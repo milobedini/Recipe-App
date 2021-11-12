@@ -1,32 +1,32 @@
-import { useParams } from "react-router"
+import { useParams, useHistory, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
+import RecipeCard from "../components/RecipeCard"
 import axios from "axios"
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
-  const { id } = useParams
+  const { id } = useParams()
 
   useEffect(() => {
-    const fetchRecipes = async (id) => {
-      try {
-        const { data } = await axios.get(`api/recipes/${id}`)
-        setRecipe(data)
-        console.log(data)
-      } catch (err) {
-        console.log(err)
+    async function fetchRecipe(id) {
+      const config = {
+        method: "get",
+        url: `/api/recipes/${id}`,
+        headers: {},
       }
+
+      const response = await axios(config)
+      setRecipe(response.data)
+      console.log(response.data)
     }
-    fetchRecipes()
+    fetchRecipe(id)
   }, [id])
 
   return (
     <section>
-      <p>hello</p>
-      {/* <h1>{recipe.name}</h1>
-      {/* <p>
-        <Link to={`/cheeses/${id}/edit`}>Edit this cheese!</Link>
-        <button onClick={handleDeleteClick}>Delete this cheese!</button>
-        </p> */}
+      <h1>{recipe.name}</h1>
+      <p>Preparation Time: {recipe.prepTime}</p>
+      <p>Average Rating: {recipe.averageRating}</p>
     </section>
   )
 }
