@@ -1,15 +1,16 @@
-import { useParams } from 'react-router'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useParams, useHistory, Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import RecipeCard from "../components/RecipeCard"
+import axios from "axios"
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
-  const id = '618d86a57c579256432a6df2'
+  const { id } = useParams()
 
   useEffect(() => {
-    async function fetchRecipes() {
+    async function fetchRecipe(id) {
       const config = {
-        method: 'get',
+        method: "get",
         url: `/api/recipes/${id}`,
         headers: {},
       }
@@ -18,18 +19,14 @@ const RecipeShow = () => {
       setRecipe(response.data)
       console.log(response.data)
     }
-    fetchRecipes()
-  }, [])
+    fetchRecipe(id)
+  }, [id])
 
   return (
     <section>
-      <p> {recipe.name} hello</p>
-      <p>hello</p>
-      {/* <h1>{recipe.name}</h1>
-      {/* <p>
-        <Link to={`/cheeses/${id}/edit`}>Edit this cheese!</Link>
-        <button onClick={handleDeleteClick}>Delete this cheese!</button>
-        </p> */}
+      <h1>{recipe.name}</h1>
+      <p>Preparation Time: {recipe.prepTime}</p>
+      <p>Average Rating: {recipe.averageRating}</p>
     </section>
   )
 }
