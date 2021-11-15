@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-import { useState, useEffect } from 'react'
-import RecipeCard from '../components/RecipeCard'
-import '../styles/cards.css'
-import axios from 'axios'
-=======
 import { useState, useEffect } from "react"
 import RecipeCard from "../components/RecipeCard"
 import "../styles/cards.css"
 import axios from "axios"
->>>>>>> development
 
 const RecipeList = () => {
   const [recipes, setRecipes] = useState([])
@@ -16,8 +9,8 @@ const RecipeList = () => {
   useEffect(() => {
     async function fetchRecipes() {
       const config = {
-        method: 'get',
-        url: '/api/recipes',
+        method: "get",
+        url: "/api/recipes",
         headers: {},
       }
 
