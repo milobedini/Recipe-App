@@ -1,10 +1,9 @@
-import React from "react"
-import RecipeCard from "../components/RecipeCard"
 import { useState, useEffect } from "react"
 import axios from "axios"
+import RecipeCard from "../components/RecipeCard"
 
-const NewRecipesList = () => {
-  const [newRecipes, setNewRecipes] = useState([])
+const BestRecipeList = () => {
+  const [bestRecipes, setBestRecipes] = useState([])
 
   useEffect(() => {
     async function fetchNewRecipes() {
@@ -16,25 +15,26 @@ const NewRecipesList = () => {
 
       const response = await axios(config)
       const data = response.data
-      let dateSortedData = data.sort((a, b) =>
-        b.createdAt > a.createdAt ? 1 : -1
+
+      let ratingSortedData = data.sort((a, b) =>
+        a.averageRating > b.averageRating ? 1 : -1
       )
 
-      let newestThreeRecipes = [
-        dateSortedData[0],
-        dateSortedData[1],
-        dateSortedData[2],
+      let bestThreeRecipes = [
+        ratingSortedData[0],
+        ratingSortedData[1],
+        ratingSortedData[2],
       ]
 
-      setNewRecipes(newestThreeRecipes)
+      setBestRecipes(bestThreeRecipes)
     }
     fetchNewRecipes()
   }, [])
 
   return (
-    <div className="featured-content">
+    <div>
       <ul>
-        {newRecipes.map((recipe) => (
+        {bestRecipes.map((recipe) => (
           <li key={recipe._id}>
             <RecipeCard {...recipe} />
           </li>
@@ -44,4 +44,4 @@ const NewRecipesList = () => {
   )
 }
 
-export default NewRecipesList
+export default BestRecipeList

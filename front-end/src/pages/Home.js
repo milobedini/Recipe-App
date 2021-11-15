@@ -1,4 +1,5 @@
 import React from "react"
+import BestRecipeList from "./BestRecipeList"
 import NewRecipesList from "./NewRecipesList"
 
 const Home = () => {
@@ -6,10 +7,11 @@ const Home = () => {
     <>
       <h1> Recipes</h1>
       <image>Picture here with large searchbar</image>
-      <h3>Featured Content below:</h3>
-      <p>Most recent recipes</p>
-      <p>Top rated recipes</p>
+      <h2>Featured Content below:</h2>
+      <h3>Most recent recipes</h3>
       <NewRecipesList />
+      <h3>Top rated recipes</h3>
+      <BestRecipeList />
     </>
   )
 }
