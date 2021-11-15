@@ -1,9 +1,11 @@
 import axios from 'axios'
-import { useState } from 'react'
-import RecipeForm from '../components/RecipeForm'
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router'
+import { fetchRecipe, getAxiosRequestConfig } from '../helpers/api.js'
+import RecipeForm from '../components/RecipeForm.js'
 
-const RecipeAdd = () => {
-    const [data, setData] = useState({
+const RecipeEdit = () => {
+    const [recipe, setRecipe] = useState({
         name: '',
         image: '',
         ingredients: [],
@@ -17,50 +19,54 @@ const RecipeAdd = () => {
         allergens: [],
         video: '',
     })
-
     const [errorInfo, setErrorInfo] = useState({})
-    const {isError, setIsError} = useState(false)
+    const [isError, setIsError] = useState(false)
+    const { id } = useParams()
+    
+    useEffect(() => {
+        fetchRecipe(id).then(setRecipe)
+    }, [id])
 
     const handleError = (error) => {
-        if(error.response) {
+        if (error.response) {
             setErrorInfo(error.response.data)
             setIsError(true)
         }
     }
-
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const config = getAxiosRequestConfig('/recipes', data)
+        const config = getAxiosRequestConfig(`/recipes/${id}`, recipe, 'put')
+
         try {
-            const response = await axios(config).catch(handleError)
-            console.log(response.data)
-            setIsError(false)
+           const response = await axios(config).catch(handleError)
+           console.log(response.data)
+           setIsError(false) 
         } catch (err) {
             console.log(err)
         }
     }
+
     const handleFormChange = (event) => {
         const { name, value } = event.target
-        setData({
-            ...data,
-            [name]:value,
+        setRecipe({
+            ...recipe,
+            [name]: value,
         })
     }
-
-    const formInputProps = { data, errorInfo, handleFormChange }
+    const formInputProps = { data: recipe, errorInfo, handleFormChange }
 
     return (
         <section>
             <form onSubmit={handleSubmit}>
-                <h1>Add your recipe</h1>
+                <h1>Edit {recipe.name}</h1>
                 <RecipeForm formInputProps={formInputProps} />
                 <div>
-                    <input type='submit' value='Add Recipe' />
+                    <input type='button' value='Cancel Edit' />
                 </div>
                 {isError ? (
                     <div className='error'>
-                        <p>Error, something went wrong. Please try again</p>
+                        <p>Error: {errorInfo.message}. Please try again</p>
                     </div>
                 ) : (
                     <></>
@@ -70,4 +76,4 @@ const RecipeAdd = () => {
     )
 }
 
-export default RecipeAdd
+export default RecipeEdit
