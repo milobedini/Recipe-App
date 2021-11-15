@@ -44,7 +44,12 @@ li {
   margin: 5px;
 }
 
-img {
+.top_row_right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ind_card img {
   border-radius: 8px;
   height: 170px;
   display: block;

@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin: 5px;
+}
+
+.top_section {
+  margin: 50px;
+  border-bottom: 1px solid rgba(121, 110, 110, 0.386);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.top_section img {
+  border-radius: 6px;
+  display: block;
+  height: 400px;
+}
+
+.ingredients_and_method {
+  display: flex;
+  margin-right: 35px;
+  align-items: center;
+}
+
+.ingredients_and_methods h3,
+p {
+  text-align: left;
+  padding: 5px;
+}
+
+.ingredients_and_method h3 {
+  margin-left: 40px;
+}
+
+.top_section_text {
+  text-align: center;
+}
+
+.recipe_reviews {
+  margin: 40px;
+}
+
+.rating_section {
+  margin: 50px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 1px solid rgba(121, 110, 110, 0.386);
+  border-bottom: 1px solid rgba(121, 110, 110, 0.386);
+}
+
+.rating_section h3 {
+  padding: 20px;
+}
+
+input {
+  width: 400px;
+  height: 40px;
+  border-radius: 8px;
+}

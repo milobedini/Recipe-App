@@ -1,8 +1,8 @@
-import { FaHeart, FaStar, FaRegClock } from "react-icons/fa"
-import { Link } from "react-router-dom"
-import "../styles/cards.css"
+import { FaHeart, FaStar, FaRegClock } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import '../styles/cards.css'
 
-const RecipeCard = ({ name, image, likedBy, _id, cookTime }) => {
+const RecipeCard = ({ name, image, likedBy, _id, cookTime, difficulty }) => {
   return (
     <>
       <div className="ind_card">
@@ -24,6 +24,7 @@ const RecipeCard = ({ name, image, likedBy, _id, cookTime }) => {
             <p>
               <FaRegClock /> {cookTime} mins
             </p>
+            <p>difficulty: {difficulty}</p>
           </div>
         </div>
         <div className="title">
