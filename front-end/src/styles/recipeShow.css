@@ -8,6 +8,7 @@
 
 .top_section {
   margin: 50px;
+  padding-bottom: 15px;
   border-bottom: 1px solid rgba(121, 110, 110, 0.386);
   display: flex;
   justify-content: space-evenly;
@@ -24,6 +25,11 @@
   display: flex;
   margin-right: 35px;
   align-items: center;
+}
+
+.recipe_ingredients ul,
+.recipe_method ul {
+  display: inline-block;
 }
 
 .ingredients_and_methods h3,
@@ -44,22 +50,62 @@ p {
   margin: 40px;
 }
 
-.rating_section {
-  margin: 50px;
-  padding: 50px;
+.leave_review_section {
+  padding-top: 20px;
+  padding-bottom: 40px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   border-top: 1px solid rgba(121, 110, 110, 0.386);
   border-bottom: 1px solid rgba(121, 110, 110, 0.386);
 }
 
-.rating_section h3 {
-  padding: 20px;
+.rate_star {
+  display: flex;
+  justify-content: center;
 }
 
 input {
   width: 400px;
   height: 40px;
   border-radius: 8px;
+}
+
+.reviews {
+  margin-top: 30px;
+  border-radius: 8px;
+}
+
+.reviews ul {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+.reviews li {
+  padding: 10px 10px;
+  margin-left: -40px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(121, 110, 110, 0.386);
+  border-radius: 8px;
+  width: 100%;
+}
+
+.review_table_top {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(121, 110, 110, 0.386);
+}
+
+.comment_author {
+  font-weight: bold;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.star {
+  cursor: pointer;
+  transition: color 400ms;
 }

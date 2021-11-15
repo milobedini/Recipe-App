@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../styles/recipeShow.css'
 import { FaStar } from 'react-icons/fa'
+import StarRating from '../components/StarRating'
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
@@ -69,32 +70,44 @@ const RecipeShow = () => {
           </ul>
         </div>
       </div>
+      <div>
+        <div className="leave_review_section">
+          <div className="leave_review">
+            <h3>Leave a Review</h3>
+            <form>
+              <input type="text" placeholder="Tell us what you think" />
+            </form>
+          </div>
+          <div className="rating_section">
+            <div>
+              <h3>How Would You Rate {recipe.name} ?</h3>
+            </div>
+            <div className="rate_star">
+              <div>
+                <StarRating />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="recipe_reviews">
-        <div className="rating_section">
-          <div>
-            <h3>Would you rate {recipe.name} ?</h3>
-          </div>
-          <div>
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-          </div>
-        </div>
-        <div>
-          <h3>Leave a Review</h3>
-          <form>
-            <input type="text" placeholder="Tell us what you think" />
-          </form>
-        </div>
         <div className="reviews">
           <h3>Reviews ({reviews.length})</h3>
           <div className="review">
             <ul>
               {reviews.map((review) => (
                 <li>
-                  <p>{review}</p>
+                  <div className="review_table_top">
+                    <div className="comment_author">
+                      <p>{review.owner}</p>
+                    </div>
+                    <div>
+                      <p>
+                        gave this recipe {review.rating}/5 <FaStar />
+                      </p>
+                    </div>
+                  </div>
+                  <p>{review.text}</p>
                 </li>
               ))}
             </ul>
