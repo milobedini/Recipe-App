@@ -11,7 +11,7 @@ import {
   addLikedBy,
 } from "../controllers/recipes.js"
 import { loginUser, registerUser } from "../controllers/auth.js"
-import { getUserProfile } from "../controllers/users.js"
+import { getUserProfile, updateUserProfile } from "../controllers/users.js"
 import { secureRoute } from "./secureRoute.js"
 
 const router = express.Router()
@@ -36,6 +36,9 @@ router.route("/register").post(registerUser)
 
 router.route("/login").post(loginUser)
 
-router.route("/profile").get(secureRoute, getUserProfile)
+router.route("/profile")
+  .get(secureRoute, getUserProfile)
+  .post(secureRoute, updateUserProfile)
+
 
 export default router

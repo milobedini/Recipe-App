@@ -1,7 +1,7 @@
-import axios from 'axios'
+// import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getAxiosRequestConfig, register } from '../helpers/api'
+import { register } from '../helpers/api'
 import FormInput from '../components/FormInput'
 
 const Register = () => {

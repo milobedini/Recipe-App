@@ -12,6 +12,9 @@ import RecipeShow from "./pages/RecipeShow"
 import Home from "./pages/Home"
 import Nav from "./components/Nav"
 import About from "./pages/About"
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import NotFound from "./pages/NotFound"
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -36,6 +39,9 @@ function App() {
             <Route path="/shopping-list" element={<ShoppingListShow />} />
             <Route path="/about" element={<About />} />
             {/* <Route path={'api/recipes/:id'} element={RecipeShow} /> */}
+            <Route path="/login" element={(props) => (<Login {...props} setIsLoggedIn={setIsLoggedIn} />)} />
+            <Route path="/register" element={<Register />} />
+            <Route element={<NotFound />} />
           </Routes>
         </main>
       </BrowserRouter>
