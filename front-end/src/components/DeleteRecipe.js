@@ -1,6 +1,6 @@
 import React from "react"
 import { getToken } from "../helpers/auth"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import axios from "axios"
 import { useParams, useNavigate } from "react-router-dom"
 
@@ -28,7 +28,6 @@ const DeleteRecipe = ({ isLoggedIn, setIsLoggedIn }) => {
     }
     const response = await axios(config).catch(handleError)
     console.log("handle delete")
-    event.preventDefault()
     navigate("/recipes")
     try {
       setIsError(false)
@@ -37,12 +36,17 @@ const DeleteRecipe = ({ isLoggedIn, setIsLoggedIn }) => {
     }
   }
 
-  return (
-    <div className="delete">
-      <h3>Delete Recipe</h3>
-      <button onClick={handleDelete}>Delete</button>
-    </div>
-  )
+  if (isLoggedIn) {
+    return (
+      <div className="delete">
+        <h3>Delete Recipe</h3>
+        <button onClick={handleDelete}>Delete</button>
+      </div>
+    )
+  }
+  if (!isLoggedIn) {
+    return <></>
+  }
 }
 
 export default DeleteRecipe
