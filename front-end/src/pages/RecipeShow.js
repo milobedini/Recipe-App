@@ -70,7 +70,7 @@ const RecipeShow = () => {
           <h3>Ingredients</h3>
           <ul>
             {ingredients.map((ingredient) => (
-              <li>
+              <li key={ingredient}>
                 <p>{ingredient}</p>
               </li>
             ))}
@@ -80,7 +80,7 @@ const RecipeShow = () => {
           <h3>Method</h3>
           <ul>
             {method.map((step) => (
-              <li>
+              <li key={step}>
                 <p>{step}</p>
               </li>
             ))}
