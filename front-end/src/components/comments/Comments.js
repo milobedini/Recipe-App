@@ -2,9 +2,12 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { getAxiosRequestConfig } from '../../helpers/api'
 import { useState } from 'react'
-import StarRating from './StarRating'
+import { FaStar } from 'react-icons/fa'
+import ReactStars from 'react-rating-stars-component'
 
 const Comments = () => {
+  const [rating, setRating] = useState(null)
+  console.log(rating)
   const [comment, setComment] = useState({
     text: '',
   })
@@ -12,6 +15,11 @@ const Comments = () => {
   const [errorInfo, setErrorInfo] = useState({})
   const [isError, setIsError] = useState(false)
   const { id } = useParams()
+
+  const handleClick = (value) => {
+    setRating(value)
+    console.log(value)
+  }
 
   const handleError = (error) => {
     if (error.response) {
@@ -39,6 +47,7 @@ const Comments = () => {
       ...comment,
       [name]: value,
     })
+
     console.log('Comment', comment)
   }
 
@@ -65,7 +74,19 @@ const Comments = () => {
           </div>
           <div className="rate_star">
             <div>
-              <StarRating />
+              <ReactStars
+                name="rating"
+                type="number"
+                value={rating}
+                count={5}
+                onChange={handleClick}
+                size={40}
+                emptyIcon={<i className="far fa-star"></i>}
+                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                fullIcon={<i className="fa fa-star"></i>}
+                activeColor="#ffd700"
+                {...formInputProps}
+              />
             </div>
           </div>
         </div>
