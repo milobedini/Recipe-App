@@ -23,7 +23,7 @@ const Login = ({ setIsLoggedIn }) => {
         setToken(token)
         setIsLoggedIn(true)
         setIsError(false)
-        navigate.push('/recipes')
+        navigate('/')
     }
 
     const handleError = (error) => {
@@ -60,7 +60,11 @@ const Login = ({ setIsLoggedIn }) => {
                     {...formInputProps}
                 />
                 <div>
-                    <input type='submit' value='login' />
+                    <input type='submit' value='log In' />
+                </div>
+                <div className='takeToOther'>
+                    <p>Don't have an account?</p>
+                    {/* <input type= value='Register'/> */}
                 </div>
                 {isError ? (
                     <div className='error'>
