@@ -22,9 +22,10 @@ const Comments = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const config = getAxiosRequestConfig(`/recipes/${id}/comments`, comment)
+    console.log('handleSubmit')
     try {
-      const response = await axios(config)
+      const config = getAxiosRequestConfig(`recipes/${id}/comments`, comment)
+      const response = await axios(config).catch(handleError)
       console.log(response)
       setIsError(false)
     } catch (err) {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { getToken } from './auth.js'
 
-const baseUrl = 'https://localhost:4000/api'
+const baseUrl = '/api'
 
 export const fetchRecipes = async () => {
   const config = {
