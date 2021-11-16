@@ -1,10 +1,11 @@
-import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import '../styles/recipeShow.css'
-import { FaStar } from 'react-icons/fa'
-import StarRating from '../components/comments/StarRating'
-import Comments from '../components/comments/Comments'
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
+import axios from "axios"
+import "../styles/recipeShow.css"
+import { FaStar } from "react-icons/fa"
+import StarRating from "../components/comments/StarRating"
+import Comments from "../components/comments/Comments"
+import Likes from "../components/likes/Likes"
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
@@ -16,7 +17,7 @@ const RecipeShow = () => {
   useEffect(() => {
     async function fetchRecipe(id) {
       const config = {
-        method: 'get',
+        method: "get",
         url: `/api/recipes/${id}`,
         headers: {},
       }
@@ -117,6 +118,9 @@ const RecipeShow = () => {
       </div>
       <div>
         <Comments />
+      </div>
+      <div>
+        <Likes />
       </div>
     </section>
   )
