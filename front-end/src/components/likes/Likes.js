@@ -6,6 +6,7 @@ import { getToken } from "../../helpers/auth"
 
 const Likes = () => {
   const [likeNumber, setLikeNumber] = useState(0)
+  const [userHasLiked, setUserHasLiked] = useState(false)
   const [errorInfo, setErrorInfo] = useState({})
   const [isError, setIsError] = useState(false)
   const { id } = useParams()
@@ -28,7 +29,7 @@ const Likes = () => {
       setLikeNumber(response.data.likedBy.length)
     }
     fetchLikes(id)
-  }, [])
+  }, [userHasLiked])
 
   const handleLike = async (event) => {
     const config = {
@@ -38,11 +39,32 @@ const Likes = () => {
         Authorization: `Bearer ${getToken()}`,
         "Content-Type": "application/json",
       },
-      //   likeNumber,
     }
     const response = await axios(config).catch(handleError)
-    // setLikeNumber(likeNumber + 1)
-    window.location.reload()
+    setUserHasLiked(true)
+    console.log(userHasLiked)
+    console.log(likeNumber)
+    event.preventDefault()
+    console.log("handleLike")
+    try {
+      setIsError(false)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const handleUnlike = async (event) => {
+    const config = {
+      method: "put",
+      url: `/api/recipes/${id}/unlike`,
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+        "Content-Type": "application/json",
+      },
+    }
+    const response = await axios(config).catch(handleError)
+    setUserHasLiked(false)
+    console.log(userHasLiked)
     console.log(likeNumber)
     event.preventDefault()
     console.log("handleLike")
@@ -56,7 +78,13 @@ const Likes = () => {
   return (
     <div>
       <h2>Like this recipe:</h2>
-      <button onClick={handleLike}>Like</button>
+      {userHasLiked ? (
+        <>
+          <button onClick={handleUnlike}>Unlike</button>
+        </>
+      ) : (
+        <button onClick={handleLike}>Like</button>
+      )}
       <h3>Current like number: {likeNumber}</h3>
     </div>
   )

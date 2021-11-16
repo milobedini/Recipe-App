@@ -9,6 +9,7 @@ import {
   addAComment,
   deleteAComment,
   addLikedBy,
+  removeLikedBy,
 } from "../controllers/recipes.js"
 import { loginUser, registerUser } from "../controllers/auth.js"
 import { getUserProfile, updateUserProfile } from "../controllers/users.js"
@@ -31,6 +32,8 @@ router
   .delete(secureRoute, deleteAComment)
 
 router.route("/recipes/:id/like").put(secureRoute, addLikedBy)
+
+router.route("/recipes/:id/unlike").put(secureRoute, removeLikedBy)
 
 router.route("/register").post(registerUser)
 
