@@ -2,8 +2,11 @@ import axios from "axios"
 import { useState } from "react"
 import RecipeForm from "../components/RecipeForm"
 import { getAxiosRequestConfig } from "../helpers/api"
+import { useNavigate } from "react-router-dom"
 
 const RecipeAdd = () => {
+  const navigate = useNavigate()
+
   const [data, setData] = useState({
     name: "",
     image: "",
@@ -12,9 +15,9 @@ const RecipeAdd = () => {
     prepTime: "",
     cookTime: "",
     method: [],
-    difficulty: "",
-    servings: "",
-    calories: "",
+    difficulty: 0,
+    servings: 0,
+    calories: 0,
     allergens: [],
     video: "",
   })
@@ -30,9 +33,9 @@ const RecipeAdd = () => {
   }
 
   const handleSubmit = async (event) => {
-    event.preventDefault()
-
-    const config = getAxiosRequestConfig("/recipes", data)
+    // event.preventDefault()
+    navigate("/recipes")
+    const config = getAxiosRequestConfig("recipes", data)
     try {
       const response = await axios(config).catch(handleError)
       console.log(response.data)
@@ -42,11 +45,12 @@ const RecipeAdd = () => {
     }
   }
   const handleFormChange = (event) => {
-    const { name, value } = event.target.value
+    const { name, value } = event.target
     setData({
       ...data,
       [name]: value,
     })
+    console.log(data)
   }
 
   const formInputProps = { data, errorInfo, handleFormChange }
