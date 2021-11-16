@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { getToken } from './auth.js'
 
-const baseUrl = "https://localhost:4000/api"
+const baseUrl = "/api"
 
 export const fetchRecipes = async () => {
   const config = {
@@ -56,11 +56,12 @@ export const getAxiosRequestConfig = (requestUrl, data, method = 'post') => {
     method,
     url: `${baseUrl}${requestUrl}`,
     headers: {
-      Authorisation: `Bearer ${getToken()}`,
+      Authorization: `Bearer ${getToken()}`,
       'Content-Type': 'application/json',
     },
     //The "payload" or the "body" of the request: the important info to send as JSON
     data,
   }
+  console.log(config)
   return config
 }

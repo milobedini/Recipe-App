@@ -38,6 +38,7 @@ const Register = () => {
             ...data,
             [name]: value,
         })
+        console.log(data)
     }
     const formInputProps = { data, errorInfo, handleFormChange }
 
