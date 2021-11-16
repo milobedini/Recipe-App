@@ -50,7 +50,9 @@ const RecipeShow = () => {
         <DeleteRecipe isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       </div>
       {isLoggedIn ? (
-        <Link to={`/recipes/${id}/edit`}>Edit this recipe!</Link>
+        <button>
+          <Link to={`/recipes/${id}/edit`}>Edit this recipe!</Link>
+        </button>
       ) : (
         <></>
       )}
