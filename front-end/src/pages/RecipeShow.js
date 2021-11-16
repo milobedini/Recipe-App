@@ -6,8 +6,20 @@ import { FaStar } from "react-icons/fa"
 import StarRating from "../components/comments/StarRating"
 import Comments from "../components/comments/Comments"
 import Likes from "../components/likes/Likes"
+import { getToken } from "../helpers/auth"
+import DeleteRecipe from "../components/DeleteRecipe"
 
 const RecipeShow = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    if (getToken()) {
+      setIsLoggedIn(true)
+    } else {
+      setIsLoggedIn(false)
+    }
+  }, [])
+
   const [recipe, setRecipe] = useState([])
   const [ingredients, setIngredients] = useState([])
   const [method, setMethod] = useState([])
@@ -33,6 +45,9 @@ const RecipeShow = () => {
 
   return (
     <section className="wrapper">
+      <div className="delete">
+        <DeleteRecipe isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      </div>
       <div className="top_section">
         <div className="info">
           <h2 className="top_section_text">{recipe.name}</h2>
@@ -120,7 +135,7 @@ const RecipeShow = () => {
         <Comments />
       </div>
       <div>
-        <Likes />
+        <Likes isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       </div>
     </section>
   )
