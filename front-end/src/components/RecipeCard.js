@@ -1,8 +1,11 @@
-import { FaHeart, FaStar, FaRegClock } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import '../styles/cards.css'
+import { FaHeart, FaStar, FaRegClock } from "react-icons/fa"
+import { Link } from "react-router-dom"
+import { useState } from "react"
+import "../styles/cards.css"
 
 const RecipeCard = ({ name, image, likedBy, _id, cookTime, difficulty }) => {
+  const [difficultyDescription, setDifficultyDescription] = useState("")
+
   return (
     <>
       <div className="ind_card">
@@ -11,7 +14,7 @@ const RecipeCard = ({ name, image, likedBy, _id, cookTime, difficulty }) => {
           <div className="card_icons">
             <div>
               <p>
-                20 <FaHeart />
+                {likedBy.length} <FaHeart />
               </p>
             </div>
             <div>
