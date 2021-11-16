@@ -1,13 +1,13 @@
-import axios from 'axios'
-import { getToken } from './auth.js'
+import axios from "axios"
+import { getToken } from "./auth.js"
 
 const baseUrl = "/api"
 
 export const fetchRecipes = async () => {
   const config = {
-    method: 'get',
+    method: "get",
     url: `${baseUrl}/recipes`,
-    headers:{}
+    headers: {},
   }
   const response = await axios(config)
   return response.data
@@ -26,10 +26,10 @@ export const fetchRecipe = async (id) => {
 
 export const deleteRecipe = async (id) => {
   const config = {
-    method: 'delete',
+    method: "delete",
     url: `${baseUrl}/recipes/${id}`,
     headers: {
-      Authorisation: `Bearer ${getToken()}`
+      Authorisation: `Bearer ${getToken()}`,
     },
   }
   const response = await axios(config)
@@ -37,11 +37,11 @@ export const deleteRecipe = async (id) => {
 }
 
 export const login = async (data) => {
-  return makeAxiosRequest('/login', data)
+  return makeAxiosRequest("/login", data)
 }
 
 export const register = (data) => {
-  return makeAxiosRequest('/register', data)
+  return makeAxiosRequest("/register", data)
 }
 
 const makeAxiosRequest = async (url, data) => {
@@ -51,17 +51,31 @@ const makeAxiosRequest = async (url, data) => {
   return response.data
 }
 
-export const getAxiosRequestConfig = (requestUrl, data, method = 'post') => {
+export const getAxiosRequestConfig = (requestUrl, data, method = "post") => {
   const config = {
     method,
-    url: `${baseUrl}${requestUrl}`,
+    url: `${baseUrl}/${requestUrl}`,
     headers: {
       Authorization: `Bearer ${getToken()}`,
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
     //The "payload" or the "body" of the request: the important info to send as JSON
     data,
   }
   console.log(config)
+  return config
+}
+
+export const getAxiosPutRequestConfig = (requestUrl, data, method = "put") => {
+  const config = {
+    method,
+    url: `${baseUrl}/${requestUrl}`,
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+      "Content-Type": "application/json",
+    },
+    //The "payload" or the "body" of the request: the important info to send as JSON
+    data,
+  }
   return config
 }

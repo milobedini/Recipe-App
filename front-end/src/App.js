@@ -9,6 +9,7 @@ import RecipeList from "./pages/RecipeList"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ShoppingListShow from "./pages/ShoppingListShow"
 import RecipeShow from "./pages/RecipeShow"
+import RecipeAdd from "./pages/RecipeAdd"
 import Home from "./pages/Home"
 import Nav from "./components/Nav"
 import About from "./pages/About"
@@ -38,8 +39,13 @@ function App() {
             <Route path="/recipes/:id" element={<RecipeShow />} />
             <Route path="/shopping-list" element={<ShoppingListShow />} />
             <Route path="/about" element={<About />} />
-            {/* <Route path={'api/recipes/:id'} element={RecipeShow} /> */}
-            <Route path="/login" element={(props) => (<Login {...props} setIsLoggedIn={setIsLoggedIn} />)} />
+            <Route path="/recipes/new" element={<RecipeAdd />} />
+            <Route
+              path="/login"
+              element={(props) => (
+                <Login {...props} setIsLoggedIn={setIsLoggedIn} />
+              )}
+            />
             <Route path="/register" element={<Register />} />
             <Route element={<NotFound />} />
           </Routes>

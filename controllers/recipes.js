@@ -66,6 +66,8 @@ export const addAComment = async (req, res) => {
     const recipe = await Recipe.findById(id)
     if (!recipe) throw new Error("Recipe not found!")
     const newComment = { ...req.body, owner: req.currentUser._id }
+    if (!newComment)
+      return res.status(418).json({ message: "comment undefined" })
     recipe.comments.push(newComment)
     await recipe.save({ validateModifiedOnly: true })
     return res.status(200).json(recipe)
@@ -98,11 +100,27 @@ export const addLikedBy = async (req, res) => {
     const { id } = req.params
     const recipe = await Recipe.findById(id)
     if (!recipe) throw new Error("Recipe not found!")
-    // const addLike = { owner: req.currentUser._id }
     if (recipe.likedBy.includes(req.currentUser._id)) {
       throw new Error("User has already liked this recipe")
     }
     recipe.likedBy.push(req.currentUser._id)
+    await recipe.save({ validateModifiedOnly: true })
+    return res.status(200).json(recipe)
+  } catch (err) {
+    console.log(err)
+    return res.status(404).json({ message: err.message })
+  }
+}
+
+export const removeLikedBy = async (req, res) => {
+  try {
+    const { id } = req.params
+    const recipe = await Recipe.findById(id)
+    if (!recipe) throw new Error("Recipe not found!")
+    if (recipe.likedBy.includes(!req.currentUser._id)) {
+      throw new Error("User has not previously liked this recipe")
+    }
+    recipe.likedBy.pull(req.currentUser._id)
     await recipe.save({ validateModifiedOnly: true })
     return res.status(200).json(recipe)
   } catch (err) {

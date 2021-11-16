@@ -1,11 +1,25 @@
-import { useParams } from 'react-router-dom'
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import '../styles/recipeShow.css'
-import { FaStar } from 'react-icons/fa'
-import StarRating from '../components/StarRating'
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
+import axios from "axios"
+import "../styles/recipeShow.css"
+import { FaStar } from "react-icons/fa"
+import StarRating from "../components/comments/StarRating"
+import Comments from "../components/comments/Comments"
+import Likes from "../components/likes/Likes"
+import { getToken } from "../helpers/auth"
+import DeleteRecipe from "../components/DeleteRecipe"
 
 const RecipeShow = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    if (getToken()) {
+      setIsLoggedIn(true)
+    } else {
+      setIsLoggedIn(false)
+    }
+  }, [])
+
   const [recipe, setRecipe] = useState([])
   const [ingredients, setIngredients] = useState([])
   const [method, setMethod] = useState([])
@@ -15,7 +29,7 @@ const RecipeShow = () => {
   useEffect(() => {
     async function fetchRecipe(id) {
       const config = {
-        method: 'get',
+        method: "get",
         url: `/api/recipes/${id}`,
         headers: {},
       }
@@ -31,6 +45,9 @@ const RecipeShow = () => {
 
   return (
     <section className="wrapper">
+      <div className="delete">
+        <DeleteRecipe isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+      </div>
       <div className="top_section">
         <div className="info">
           <h2 className="top_section_text">{recipe.name}</h2>
@@ -53,7 +70,7 @@ const RecipeShow = () => {
           <h3>Ingredients</h3>
           <ul>
             {ingredients.map((ingredient) => (
-              <li>
+              <li key={ingredient}>
                 <p>{ingredient}</p>
               </li>
             ))}
@@ -63,7 +80,7 @@ const RecipeShow = () => {
           <h3>Method</h3>
           <ul>
             {method.map((step) => (
-              <li>
+              <li key={step}>
                 <p>{step}</p>
               </li>
             ))}
@@ -113,6 +130,12 @@ const RecipeShow = () => {
             </ul>
           </div>
         </div>
+      </div>
+      <div>
+        <Comments />
+      </div>
+      <div>
+        <Likes isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       </div>
     </section>
   )

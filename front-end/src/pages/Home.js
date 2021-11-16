@@ -1,5 +1,6 @@
 import React from "react"
 import BestRecipeList from "./BestRecipeList"
+import MostLikedRecipes from "./MostLikedRecipes"
 import NewRecipesList from "./NewRecipesList"
 
 const Home = () => {
@@ -12,6 +13,8 @@ const Home = () => {
       <NewRecipesList />
       <h3>Top rated recipes</h3>
       <BestRecipeList />
+      <h3>Most liked recipes</h3>
+      <MostLikedRecipes />
     </>
   )
 }

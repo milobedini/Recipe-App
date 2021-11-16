@@ -8,7 +8,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
   const handleLogout = () => {
     removeToken()
     setIsLoggedIn(false)
-    navigate.push("/")
+    navigate("/")
   }
   return (
     <nav>
