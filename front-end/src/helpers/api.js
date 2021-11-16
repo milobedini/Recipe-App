@@ -1,13 +1,13 @@
 import axios from 'axios'
 import { getToken } from './auth.js'
 
-const baseUrl = "https://localhost:4000/api"
+const baseUrl = 'https://localhost:4000/api'
 
 export const fetchRecipes = async () => {
   const config = {
     method: 'get',
     url: `${baseUrl}/recipes`,
-    headers:{}
+    headers: {},
   }
   const response = await axios(config)
   return response.data
@@ -15,7 +15,7 @@ export const fetchRecipes = async () => {
 
 export const fetchRecipe = async (id) => {
   const config = {
-    method: "get",
+    method: 'get',
     url: `${baseUrl}/recipes/${id}`,
     headers: {},
   }
@@ -29,7 +29,7 @@ export const deleteRecipe = async (id) => {
     method: 'delete',
     url: `${baseUrl}/recipes/${id}`,
     headers: {
-      Authorisation: `Bearer ${getToken()}`
+      Authorisation: `Bearer ${getToken()}`,
     },
   }
   const response = await axios(config)
@@ -54,9 +54,9 @@ const makeAxiosRequest = async (url, data) => {
 export const getAxiosRequestConfig = (requestUrl, data, method = 'post') => {
   const config = {
     method,
-    url: `${baseUrl}${requestUrl}`,
+    url: `${baseUrl}/${requestUrl}`,
     headers: {
-      Authorisation: `Bearer ${getToken()}`,
+      Authorization: `Bearer ${getToken()}`,
       'Content-Type': 'application/json',
     },
     //The "payload" or the "body" of the request: the important info to send as JSON

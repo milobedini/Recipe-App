@@ -26,6 +26,9 @@
   margin-right: 35px;
   align-items: center;
 }
+.recipe_method {
+  width: 60%;
+}
 
 .recipe_ingredients ul,
 .recipe_method ul {

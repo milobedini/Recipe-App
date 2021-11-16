@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../styles/recipeShow.css'
 import { FaStar } from 'react-icons/fa'
-import StarRating from '../components/StarRating'
+import StarRating from '../components/comments/StarRating'
+import Comments from '../components/comments/Comments'
 
 const RecipeShow = () => {
   const [recipe, setRecipe] = useState([])
@@ -113,6 +114,9 @@ const RecipeShow = () => {
             </ul>
           </div>
         </div>
+      </div>
+      <div>
+        <Comments />
       </div>
     </section>
   )

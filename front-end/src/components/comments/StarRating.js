@@ -4,6 +4,7 @@ import { useState } from 'react'
 const StarRating = () => {
   const [rating, setRating] = useState(null)
   const [hover, setHover] = useState(null)
+  console.log(rating)
 
   return (
     <div>
