@@ -16,6 +16,7 @@ import About from "./pages/About"
 import Login from "./pages/Login"
 import Register from "./pages/Register"
 import NotFound from "./pages/NotFound"
+import RecipeEdit from "./pages/RecipeEdit"
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -37,6 +38,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/recipes" element={<RecipeList />} />
             <Route path="/recipes/:id" element={<RecipeShow />} />
+            <Route path="/recipes/:id/edit" element={<RecipeEdit />} />
             <Route path="/shopping-list" element={<ShoppingListShow />} />
             <Route path="/about" element={<About />} />
             <Route path="/recipes/new" element={<RecipeAdd />} />
