@@ -5,11 +5,11 @@ import { useState } from 'react'
 import { FaStar } from 'react-icons/fa'
 import ReactStars from 'react-rating-stars-component'
 
-const Comments = () => {
-  const [rating, setRating] = useState(null)
-  console.log(rating)
+const Comments = ({ refetch }) => {
+  const [rating, setRating] = useState(true)
   const [comment, setComment] = useState({
     text: '',
+    rating: null,
   })
 
   const [errorInfo, setErrorInfo] = useState({})
@@ -17,7 +17,7 @@ const Comments = () => {
   const { id } = useParams()
 
   const handleClick = (value) => {
-    setRating(value)
+    setComment({ ...comment, rating: value })
     console.log(value)
   }
 
@@ -31,10 +31,26 @@ const Comments = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log('handleSubmit')
+
+    if (!comment.rating) {
+      alert('Please give a rating')
+      return
+    }
     try {
       const config = getAxiosRequestConfig(`recipes/${id}/comments`, comment)
       const response = await axios(config).catch(handleError)
       console.log(response)
+      console.log(response)
+      if (response.status > 199 && response.status < 300) {
+        setComment({
+          text: '',
+          rating: null,
+        })
+        setRating(false)
+        setRating(true)
+        refetch()
+      }
+
       setIsError(false)
     } catch (err) {
       console.log(err)
@@ -74,19 +90,20 @@ const Comments = () => {
           </div>
           <div className="rate_star">
             <div>
-              <ReactStars
-                name="rating"
-                type="number"
-                value={rating}
-                count={5}
-                onChange={handleClick}
-                size={40}
-                emptyIcon={<i className="far fa-star"></i>}
-                halfIcon={<i className="fa fa-star-half-alt"></i>}
-                fullIcon={<i className="fa fa-star"></i>}
-                activeColor="#ffd700"
-                {...formInputProps}
-              />
+              {rating ? (
+                <ReactStars
+                  name="rating"
+                  type="number"
+                  count={5}
+                  onChange={handleClick}
+                  size={40}
+                  emptyIcon={<i className="far fa-star"></i>}
+                  halfIcon={<i className="fa fa-star-half-alt"></i>}
+                  fullIcon={<i className="fa fa-star"></i>}
+                  activeColor="#ffd700"
+                  {...formInputProps}
+                />
+              ) : null}
             </div>
           </div>
         </div>
