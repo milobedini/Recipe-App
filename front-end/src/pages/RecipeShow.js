@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../styles/recipeShow.css'
 import { FaStar } from 'react-icons/fa'
-import StarRating from '../components/comments/StarRating'
 import Comments from '../components/comments/Comments'
 import Likes from '../components/likes/Likes'
 import { getToken } from '../helpers/auth'
@@ -10,6 +9,7 @@ import DeleteRecipe from '../components/DeleteRecipe'
 import { getUser } from '../helpers/auth'
 import { getAxiosDeleteRequestConfig } from '../helpers/api'
 import { Link, useParams } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 const RecipeShow = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -111,21 +111,15 @@ const RecipeShow = () => {
       </div>
       <div>
         <div className="leave_review_section">
+          <h3>What do you think of {recipe.name}?</h3>
           <div className="leave_review">
-            <h3>Leave a Review</h3>
-            <form>
-              <input type="text" placeholder="Tell us what you think" />
-            </form>
+            <Comments refetch={() => fetchRecipe(id)} />
           </div>
           <div className="rating_section">
             <div>
-              <h3>How Would You Rate {recipe.name} ?</h3>
+              <h3></h3>
             </div>
-            <div className="rate_star">
-              <div>
-                <StarRating />
-              </div>
-            </div>
+            <div className="rate_star"></div>
           </div>
         </div>
       </div>
@@ -144,13 +138,17 @@ const RecipeShow = () => {
                       </div>
                       <div>
                         <p>
-                          {Array(review.rating).fill(<FaStar />)}
+                          {Array(review.rating).fill(
+                            <FaStar color="#ffd700" />
+                          )}
                           {/* gave this recipe {review.rating}/5 <FaStar /> */}
                         </p>
                       </div>
                       {name === review.username ? (
                         <span onClick={(e) => handleClose(review._id)}>
-                          &times;
+                          <Button variant="outline-primary" size="sm">
+                            Delete
+                          </Button>
                         </span>
                       ) : null}
                     </div>
@@ -161,9 +159,6 @@ const RecipeShow = () => {
             </ul>
           </div>
         </div>
-      </div>
-      <div>
-        <Comments refetch={() => fetchRecipe(id)} />
       </div>
       <div>
         <Likes isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />

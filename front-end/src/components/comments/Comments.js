@@ -63,8 +63,6 @@ const Comments = ({ refetch }) => {
       ...comment,
       [name]: value,
     })
-
-    console.log('Comment', comment)
   }
 
   const formInputProps = { data: comment, errorInfo, handleFormChange }
@@ -72,7 +70,6 @@ const Comments = ({ refetch }) => {
   return (
     <section>
       <form className="review" onSubmit={handleSubmit}>
-        <h3>Review recipe</h3>
         <input
           name="text"
           type="text"
@@ -82,12 +79,9 @@ const Comments = ({ refetch }) => {
           {...formInputProps}
         />
         <div>
-          <input type="submit" value="Leave a Review" />
+          <input type="submit" value="Submit Review" />
         </div>
         <div className="rating_section">
-          <div>
-            <h3>How Would You Rate This recipe ?</h3>
-          </div>
           <div className="rate_star">
             <div>
               {rating ? (
