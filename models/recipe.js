@@ -1,22 +1,16 @@
-import mongoose from 'mongoose'
-import uniqueValidator from 'mongoose-unique-validator'
+import mongoose from "mongoose"
+import uniqueValidator from "mongoose-unique-validator"
 
 const commentSchema = new mongoose.Schema(
   {
     text: { type: String, required: true, maxlength: 350 },
-    owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+    owner: { type: mongoose.Schema.ObjectId, ref: "User", required: true },
     rating: { type: Number, required: false, min: 1, max: 5 },
   },
   {
     timestamps: true,
   }
 )
-// its own model/reference relationship rather than embedded?
-const favouriteSchema = new mongoose.Schema({
-  owner: { type: mongoose.Schema.ObjectId, ref: 'User' },
-})
-
-//field on recipe of likes, array of user ids
 
 const recipeSchema = new mongoose.Schema(
   {
@@ -32,17 +26,15 @@ const recipeSchema = new mongoose.Schema(
     calories: { type: Number, min: 1 },
     allergens: [{ type: String, required: true }],
     video: { type: String },
-    // likes/rating
-    owner: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+    owner: { type: mongoose.Schema.ObjectId, ref: "User", required: true },
     comments: [commentSchema],
-    likedBy: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
-    //mark as tried/eaten
+    likedBy: [{ type: mongoose.Schema.ObjectId, ref: "User" }],
   },
   { timestamps: true }
 )
 
-recipeSchema.virtual('averageRating').get(function () {
-  if (!this.comments.length) return 'Currently unrated'
+recipeSchema.virtual("averageRating").get(function () {
+  if (!this.comments.length) return "Currently unrated"
   const sumOfRatings = this.comments.reduce((acc, comment) => {
     if (!comment.rating) return acc
     return acc + comment.rating
@@ -50,8 +42,8 @@ recipeSchema.virtual('averageRating').get(function () {
   return (sumOfRatings / this.comments.length).toFixed(1)
 })
 
-recipeSchema.set('toJSON', { virtuals: true })
+recipeSchema.set("toJSON", { virtuals: true })
 
 recipeSchema.plugin(uniqueValidator)
 
-export default mongoose.model('Recipe', recipeSchema)
+export default mongoose.model("Recipe", recipeSchema)

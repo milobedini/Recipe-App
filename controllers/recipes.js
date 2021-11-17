@@ -100,16 +100,16 @@ export const addLikedBy = async (req, res) => {
   try {
     const { id } = req.params
     const recipe = await Recipe.findById(id)
-    const user = await User.findById(req.currentUser._id)
+    // const user = await User.findById(req.currentUser._id)
     if (!recipe) throw new Error("Recipe not found!")
-    if (!user) throw new Error("User not found!")
+    // if (!user) throw new Error("User not found!")
     if (recipe.likedBy.includes(req.currentUser._id)) {
       throw new Error("User has already liked this recipe")
     }
     recipe.likedBy.push(req.currentUser._id)
-    user.likedRecipes.push(recipe.id)
+    // user.likedRecipes.push(recipe.id)
     await recipe.save({ validateModifiedOnly: true })
-    await user.save({ validateModifiedOnly: true })
+    // await user.save({ validateModifiedOnly: true })
     return res.status(200).json(recipe)
   } catch (err) {
     console.log(err)
