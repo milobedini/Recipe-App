@@ -44,13 +44,10 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/recipes/new" element={<RecipeAdd />} />
             <Route path="/profile" element={<Profile />} />
-            {/* <Route
+            <Route
               path="/login"
-              element={(props) => (
-                <Login {...props} setIsLoggedIn={setIsLoggedIn} />
-              )}
-            /> */}
-            <Route path="/login" element={<Login />} />
+              element={<Login setIsLoggedIn={setIsLoggedIn} />}
+            />
             <Route path="/register" element={<Register />} />
             <Route element={<NotFound />} />
           </Routes>
