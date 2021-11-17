@@ -2,13 +2,15 @@ import React from "react"
 
 const ShoppingList = ({ items, removeItem, quantities }) => {
   return (
-    <ul>
+    <ul className="list">
       {items.map((item, index) => (
-        <li>
+        <li className="list-item">
           {console.log(quantities)}
           <span>{quantities[index]}x</span>
           <span> {item}</span>
-          <button onClick={() => removeItem(item)}>Remove item</button>
+          <button className="list-delete" onClick={() => removeItem(item)}>
+            Remove item
+          </button>
         </li>
       ))}
     </ul>

@@ -10,7 +10,6 @@ const FormInput = ({
     <div className="field">
       <label htmlFor={name}>{name}</label>
       <input
-        placeholder={placeholder}
         type={type}
         id={name}
         name={name}

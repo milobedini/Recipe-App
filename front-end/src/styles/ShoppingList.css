@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+.shopping-list {
+  margin: 0 auto;
+  font-family: "DM Sans", sans-serif;
+  height: 100%;
+  background: #9575cd;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  justify-content: baseline;
+}
+
+.shopping-list .container {
+  margin: 0 auto;
+  max-width: 20em;
+}
+
+.shopping-list header {
+  padding: 20px 0 10px 0;
+  background: #4527a0;
+  text-align: center;
+}
+
+.shopping-list .header-title {
+  margin: 0;
+  padding-bottom: 0;
+  font-size: 3.49rem;
+  font-weight: 300;
+}
+
+.shopping-list .sub-input {
+  padding-left: 10px;
+  height: 44px;
+  width: 66.6666%;
+  border: none;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-list .sub-input::placeholder {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.shopping-list .sub-input:focus {
+  outline: none;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+}
+.shopping-list li {
+  border-radius: 100px;
+}
+.shopping-list .add-button {
+  /* float: right; */
+  height: 46px;
+  width: 27.33333%;
+  background: #ffc107;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
+  border: none;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.shopping-list .sub-input,
+.shopping-list .add-button {
+  margin-bottom: 16px;
+}
+
+.shopping-list .list {
+  padding: 0;
+  list-style-type: none;
+  clear: both;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopping-list .list-item {
+  font-size: 1.3rem;
+  width: 300px;
+  height: 30px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.shopping-list .list-item:nth-child(odd) {
+  background: #673ab7;
+}
+
+.shopping-list .list-item:nth-child(even) {
+  background: #4527a0;
+}
+
+.shopping-list .list-delete {
+  cursor: pointer;
+  float: left;
+  margin: -5px;
+  padding: 5px 9px;
+}
+
+.shopping-list .form {
+  margin: 0;
+  padding: 0;
+}

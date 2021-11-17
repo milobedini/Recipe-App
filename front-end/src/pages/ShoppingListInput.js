@@ -22,23 +22,29 @@ const ShoppingListInput = ({ addItem, addQuantity }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="item">Item</label>
-      <input
-        id="item"
-        value={item}
-        type="text"
-        placeholder="e.g. Pint of milk"
-        onChange={handleItemChange}
-      />
-      <label htmlFor="quantity">Quantity</label>
-      <input
-        id="quantity"
-        value={quantity}
-        type="number"
-        placeholder="1"
-        onChange={handleQuantityChange}
-      />
-      <input type="submit" value="Add ➕" />
+      <div className="foods">
+        <label htmlFor="item">Item</label>
+        <input
+          className="sub-input"
+          id="item"
+          value={item}
+          type="text"
+          placeholder="e.g. Pint of milk"
+          onChange={handleItemChange}
+        />
+      </div>
+      <div className="quantity">
+        <label htmlFor="quantity">Quantity</label>
+        <input
+          className="sub-input"
+          id="quantity"
+          value={quantity}
+          type="number"
+          placeholder="1"
+          onChange={handleQuantityChange}
+        />
+        <input className="add-button" type="submit" value="Add ➕" />
+      </div>
     </form>
   )
 }

@@ -3,6 +3,7 @@ import { useState } from "react"
 import RecipeForm from "../components/RecipeForm"
 import { getAxiosRequestConfig } from "../helpers/api"
 import { useNavigate } from "react-router-dom"
+import "../styles/RecipeAdd.css"
 
 const RecipeAdd = () => {
   const navigate = useNavigate()
@@ -56,22 +57,28 @@ const RecipeAdd = () => {
   const formInputProps = { data, errorInfo, handleFormChange }
 
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <h1>Add your recipe</h1>
-        <RecipeForm formInputProps={formInputProps} />
-        <div>
-          <input type="submit" value="Add Recipe" />
-        </div>
-        {isError ? (
-          <div className="error">
-            <p>Error, something went wrong. Please try again</p>
+    <div className="recipe-add">
+      <div className="form">
+        <form className="card-form" onSubmit={handleSubmit}>
+          <div className="card">
+            <div className="card-image">
+              <h2 className="card-heading">Add your recipe below:</h2>
+            </div>
           </div>
-        ) : (
-          <></>
-        )}
-      </form>
-    </section>
+          <RecipeForm className="input-field" formInputProps={formInputProps} />
+          <div>
+            <input className="action" type="submit" value="Add Recipe" />
+          </div>
+          {isError ? (
+            <div className="error">
+              <p>Error, something went wrong. Please try again</p>
+            </div>
+          ) : (
+            <></>
+          )}
+        </form>
+      </div>
+    </div>
   )
 }
 
