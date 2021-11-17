@@ -1,11 +1,11 @@
-import axios from "axios"
-import { getToken } from "./auth.js"
+import axios from 'axios'
+import { getToken } from './auth.js'
 
-const baseUrl = "/api"
+const baseUrl = '/api'
 
 export const fetchRecipes = async () => {
   const config = {
-    method: "get",
+    method: 'get',
     url: `${baseUrl}/recipes`,
     headers: {},
   }
@@ -15,7 +15,7 @@ export const fetchRecipes = async () => {
 
 export const fetchRecipe = async (id) => {
   const config = {
-    method: "get",
+    method: 'get',
     url: `${baseUrl}/recipes/${id}`,
     headers: {},
   }
@@ -26,7 +26,7 @@ export const fetchRecipe = async (id) => {
 
 export const deleteRecipe = async (id) => {
   const config = {
-    method: "delete",
+    method: 'delete',
     url: `${baseUrl}/recipes/${id}`,
     headers: {
       Authorisation: `Bearer ${getToken()}`,
@@ -37,11 +37,11 @@ export const deleteRecipe = async (id) => {
 }
 
 export const login = async (data) => {
-  return makeAxiosRequest("/login", data)
+  return makeAxiosRequest('/login', data)
 }
 
 export const register = (data) => {
-  return makeAxiosRequest("/register", data)
+  return makeAxiosRequest('/register', data)
 }
 
 const makeAxiosRequest = async (url, data) => {
@@ -51,13 +51,13 @@ const makeAxiosRequest = async (url, data) => {
   return response.data
 }
 
-export const getAxiosRequestConfig = (requestUrl, data, method = "post") => {
+export const getAxiosRequestConfig = (requestUrl, data, method = 'post') => {
   const config = {
     method,
     url: `${baseUrl}/${requestUrl}`,
     headers: {
       Authorization: `Bearer ${getToken()}`,
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     //The "payload" or the "body" of the request: the important info to send as JSON
     data,
@@ -66,16 +66,29 @@ export const getAxiosRequestConfig = (requestUrl, data, method = "post") => {
   return config
 }
 
-export const getAxiosPutRequestConfig = (requestUrl, data, method = "put") => {
+export const getAxiosPutRequestConfig = (requestUrl, data, method = 'put') => {
   const config = {
     method,
     url: `${baseUrl}/${requestUrl}`,
     headers: {
       Authorization: `Bearer ${getToken()}`,
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     //The "payload" or the "body" of the request: the important info to send as JSON
     data,
+  }
+  return config
+}
+
+export const getAxiosDeleteRequestConfig = (requestUrl, method = 'delete') => {
+  const config = {
+    method,
+    url: `${baseUrl}/${requestUrl}`,
+    headers: {
+      Authorization: `Bearer ${getToken()}`,
+      'Content-Type': 'application/json',
+    },
+    //The "payload" or the "body" of the request: the important info to send as JSON
   }
   return config
 }
