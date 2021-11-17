@@ -6,13 +6,21 @@ const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true, maxlength: 30 },
   email: { type: String, unique: true, required: true },
   password: { type: String, required: true },
-  likedRecipes: [{ type: mongoose.Schema.ObjectId, ref: "Recipe" }],
+  // likedRecipes: [{ type: mongoose.Schema.ObjectId, ref: "Recipe" }],
   //on users, array of likedRecipes with recipe ids
 })
 userSchema.virtual("createdRecipes", {
   ref: "Recipe",
   localField: "_id",
   foreignField: "owner",
+  justOne: false,
+})
+
+userSchema.virtual("likedRecipes", {
+  ref: "Recipe",
+  localField: "_id",
+  foreignField: "likedBy",
+  justOne: false,
 })
 
 userSchema.set("toJSON", {
