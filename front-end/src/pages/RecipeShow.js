@@ -1,17 +1,18 @@
-import { useParams } from "react-router-dom"
-import { useState, useEffect } from "react"
-import axios from "axios"
-import "../styles/recipeShow.css"
-import { FaStar } from "react-icons/fa"
-import StarRating from "../components/comments/StarRating"
-import Comments from "../components/comments/Comments"
-import Likes from "../components/likes/Likes"
-import { getToken } from "../helpers/auth"
-import DeleteRecipe from "../components/DeleteRecipe"
-
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import '../styles/recipeShow.css'
+import { FaStar } from 'react-icons/fa'
+import StarRating from '../components/comments/StarRating'
+import Comments from '../components/comments/Comments'
+import Likes from '../components/likes/Likes'
+import { getToken } from '../helpers/auth'
+import DeleteRecipe from '../components/DeleteRecipe'
+import { getUser } from '../helpers/auth'
+import { getAxiosDeleteRequestConfig } from '../helpers/api'
 const RecipeShow = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
+  const name = getUser()
   useEffect(() => {
     if (getToken()) {
       setIsLoggedIn(true)
@@ -26,23 +27,36 @@ const RecipeShow = () => {
   const [reviews, setReviews] = useState([])
   const { id } = useParams()
 
-  useEffect(() => {
-    async function fetchRecipe(id) {
-      const config = {
-        method: "get",
-        url: `/api/recipes/${id}`,
-        headers: {},
-      }
-
-      const response = await axios(config)
-      setRecipe(response.data)
-      setIngredients(response.data.ingredients)
-      setMethod(response.data.method)
-      setReviews(response.data.comments)
+  async function fetchRecipe(id) {
+    const config = {
+      method: 'get',
+      url: `/api/recipes/${id}`,
+      headers: {},
     }
+
+    const response = await axios(config)
+    setRecipe(response.data)
+    setIngredients(response.data.ingredients)
+    setMethod(response.data.method)
+    setReviews(response.data.comments)
+  }
+  useEffect(() => {
     fetchRecipe(id)
   }, [id])
-
+  const handleClose = async (commentId) => {
+    try {
+      const config = getAxiosDeleteRequestConfig(
+        `/recipes/${id}/comments/${commentId}`
+      )
+      const response = await axios(config).catch(() => console.log('not cool'))
+      console.log(response)
+      if (response.status > 199 && response.status < 300) {
+        fetchRecipe(id)
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
   return (
     <section className="wrapper">
       <div className="delete">
@@ -112,27 +126,36 @@ const RecipeShow = () => {
           <h3>Reviews ({reviews.length})</h3>
           <div className="review">
             <ul>
-              {reviews.map((review) => (
-                <li>
-                  <div className="review_table_top">
-                    <div className="comment_author">
-                      <p>{review.owner}</p>
+              {reviews.map((review) => {
+                console.log(review)
+                return (
+                  <li>
+                    <div className="review_table_top">
+                      <div className="comment_author">
+                        <p>{review.username}</p>
+                      </div>
+                      <div>
+                        <p>
+                          {Array(review.rating).fill(<FaStar />)}
+                          {/* gave this recipe {review.rating}/5 <FaStar /> */}
+                        </p>
+                      </div>
+                      {name === review.username ? (
+                        <span onClick={(e) => handleClose(review._id)}>
+                          &times;
+                        </span>
+                      ) : null}
                     </div>
-                    <div>
-                      <p>
-                        gave this recipe {review.rating}/5 <FaStar />
-                      </p>
-                    </div>
-                  </div>
-                  <p>{review.text}</p>
-                </li>
-              ))}
+                    <p>{review.text}</p>
+                  </li>
+                )
+              })}
             </ul>
           </div>
         </div>
       </div>
       <div>
-        <Comments />
+        <Comments refetch={() => fetchRecipe(id)} />
       </div>
       <div>
         <Likes isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />

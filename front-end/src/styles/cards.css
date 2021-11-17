@@ -56,6 +56,10 @@ li {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 5px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: 40% 30%;
 }
 
 p {
