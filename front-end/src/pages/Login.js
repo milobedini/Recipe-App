@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../helpers/api.js'
 import { setToken } from '../helpers/auth.js'
@@ -6,7 +6,7 @@ import FormInput from '../components/FormInput'
 
 const Login = ({ setIsLoggedIn }) => {
     const [data, setData] = useState({
-        email:'',
+        username:'',
         password:'',
     })
     const [errorInfo, setErrorInfo] = useState({})
@@ -48,9 +48,9 @@ const Login = ({ setIsLoggedIn }) => {
             <form onSubmit={handleSubmit}>
                 <h1>Sign in to TasteBook</h1>
                 <FormInput 
-                    placeholder='email@email.com'
-                    type='email'
-                    name='email'
+                    placeholder='username'
+                    type='text'
+                    name='username'
                     {...formInputProps}
                 />
                 <FormInput
