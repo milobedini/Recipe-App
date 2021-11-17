@@ -28,20 +28,19 @@ const Profile = () => {
     fetchUserInfo()
   }, [])
   console.log(userRecipes)
-  console.log(likedRecipes) //currently returns just ids of recipe.
 
   return (
     <>
       <h2>Hi {username}!</h2>
       <h3>Your liked recipes:</h3>
       <div>
-        {/* <ul className="card_wrapper">
+        <ul className="card_wrapper">
           {likedRecipes.map((recipe) => (
             <li key={recipe._id}>
               <RecipeCard {...recipe} />
             </li>
           ))}
-        </ul> */}
+        </ul>
       </div>
 
       <h3>Your added recipes:</h3>
