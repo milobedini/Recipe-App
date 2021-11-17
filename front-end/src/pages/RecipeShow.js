@@ -1,4 +1,3 @@
-import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import '../styles/recipeShow.css'
@@ -10,6 +9,8 @@ import { getToken } from '../helpers/auth'
 import DeleteRecipe from '../components/DeleteRecipe'
 import { getUser } from '../helpers/auth'
 import { getAxiosDeleteRequestConfig } from '../helpers/api'
+import { Link, useParams } from 'react-router-dom'
+
 const RecipeShow = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const name = getUser()
@@ -62,6 +63,13 @@ const RecipeShow = () => {
       <div className="delete">
         <DeleteRecipe isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       </div>
+      {isLoggedIn ? (
+        <button>
+          <Link to={`/recipes/${id}/edit`}>Edit this recipe!</Link>
+        </button>
+      ) : (
+        <></>
+      )}
       <div className="top_section">
         <div className="info">
           <h2 className="top_section_text">{recipe.name}</h2>

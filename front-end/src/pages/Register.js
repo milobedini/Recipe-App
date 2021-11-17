@@ -6,10 +6,10 @@ import FormInput from '../components/FormInput'
 
 const Register = () => {
     const [data, setData] = useState({
-        username: '',
-        email: '',
-        password: '',
-        passwordConfirmation: '',
+        username: "",
+        email: "",
+        password: "",
+        passwordConfirmation: "",
     })
     const[errorInfo ,setErrorInfo] = useState({})
     const[isError, setIsError] = useState(false)
@@ -23,7 +23,7 @@ const Register = () => {
 
     const handleSuccessfulRegister = () => {
         setIsError(false)
-        navigate.push('/login')
+        navigate('/login')
     }
 
     const handleError = (error) => {
@@ -38,6 +38,7 @@ const Register = () => {
             ...data,
             [name]: value,
         })
+        console.log(data)
     }
     const formInputProps = { data, errorInfo, handleFormChange }
 

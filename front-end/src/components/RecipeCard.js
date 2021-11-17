@@ -4,12 +4,6 @@ import { useState } from "react"
 import "../styles/cards.css"
 
 const RecipeCard = ({ name, image, likedBy, _id, cookTime, difficulty }) => {
-  const [difficultyDescription, setDifficultyDescription] = useState("")
-
-  // if (difficulty === 1) {
-  //   setDifficultyDescription("Easy")
-  // }
-
   return (
     <>
       <div className="ind_card">
@@ -31,7 +25,7 @@ const RecipeCard = ({ name, image, likedBy, _id, cookTime, difficulty }) => {
             <p>
               <FaRegClock /> {cookTime} mins
             </p>
-            <p>difficulty: {difficultyDescription}</p>
+            <p>difficulty: {difficulty}</p>
           </div>
         </div>
         <div className="title">

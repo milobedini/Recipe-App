@@ -62,6 +62,7 @@ export const getAxiosRequestConfig = (requestUrl, data, method = 'post') => {
     //The "payload" or the "body" of the request: the important info to send as JSON
     data,
   }
+  console.log(config)
   return config
 }
 
