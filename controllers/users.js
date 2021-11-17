@@ -34,6 +34,6 @@ export const updateUserProfile = async (req, res) => {
     }
   } catch (err) {
     console.log(err)
-    return res.status(404).json({ message: 'Not Found'})
+    return res.status(404).json({ message: "Not Found" })
   }
 }

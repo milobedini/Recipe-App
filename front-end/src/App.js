@@ -17,6 +17,7 @@ import Login from "./pages/Login"
 import Register from "./pages/Register"
 import NotFound from "./pages/NotFound"
 import RecipeEdit from "./pages/RecipeEdit"
+import Profile from "./pages/Profile"
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -42,6 +43,7 @@ function App() {
             <Route path="/shopping-list" element={<ShoppingListShow />} />
             <Route path="/about" element={<About />} />
             <Route path="/recipes/new" element={<RecipeAdd />} />
+            <Route path="/profile" element={<Profile />} />
             <Route
               path="/login"
               element={(props) => (
