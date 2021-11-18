@@ -77,16 +77,23 @@ const Likes = ({ isLoggedIn, setIsLoggedIn }) => {
 
   if (isLoggedIn) {
     return (
-      <div>
-        <h2>Like this recipe:</h2>
+      <div className="like-container">
         {userHasLiked ? (
           <>
-            <button onClick={handleUnlike}>Unlike</button>
+            <button className="like-button" onClick={handleUnlike}>
+              💔
+            </button>
           </>
         ) : (
-          <button onClick={handleLike}>Like</button>
+          <button
+            id="heart-button"
+            className="like-button"
+            onClick={handleLike}
+          >
+            ♥️
+          </button>
         )}
-        <h3>Current like number: {likeNumber}</h3>
+        <h3>{likeNumber}</h3>
       </div>
     )
   }

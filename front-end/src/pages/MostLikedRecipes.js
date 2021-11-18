@@ -21,13 +21,14 @@ const MostLikedRecipes = () => {
         b.likedBy.length > a.likedBy.length ? 1 : -1
       )
 
-      let mostLikedThreeRecipes = [
+      let mostLikedFourRecipes = [
         likedSortedData[0],
         likedSortedData[1],
         likedSortedData[2],
+        likedSortedData[3],
       ]
 
-      setLikedRecipes(mostLikedThreeRecipes)
+      setLikedRecipes(mostLikedFourRecipes)
     }
     fetchLikedRecipes()
   }, [])

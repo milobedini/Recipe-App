@@ -53,7 +53,7 @@
   right: 10%;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #007bff;
+  color: white;
   line-height: 1.222;
 }
 .register small {
@@ -93,7 +93,7 @@
   border-bottom-color: #6658d3;
 }
 .register label {
-  color: #6658d3;
+  color: #011570;
   transform: translateY(-1.5rem);
 }
 .register .action {
@@ -103,7 +103,7 @@
   font-size: 1.25rem;
   padding: 1em;
   font-weight: 500;
-  background-color: #6658d3;
+  background-color: #011570;
   border-radius: 6px;
   color: #fff;
   border: 0;
@@ -120,7 +120,7 @@
 }
 .register .card-info a {
   display: block;
-  color: #6658d3;
+  color: #011570;
   text-decoration: none;
 }
 
@@ -137,7 +137,7 @@
 .register .action:hover {
   font-size: 1.2rem;
   background: coral;
-  color: #6610f2;
+  color: #011570;
   transition: 1s ease;
   cursor: pointer;
 }

@@ -51,7 +51,7 @@
   right: 10%;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #007bff;
+  color: white;
   line-height: 1.222;
 }
 .login small {
@@ -72,7 +72,7 @@
   margin-top: 0.5rem;
 }
 .login input label {
-  color: #8597a3;
+  color: #011570;
   transition: 0.25s ease;
 }
 
@@ -91,7 +91,7 @@
   border-bottom-color: #6658d3;
 }
 .login label {
-  color: #6658d3;
+  color: #011570;
   transform: translateY(-1.5rem);
 }
 .login .action {
@@ -100,7 +100,7 @@
   font-size: 1.25rem;
   padding: 1em;
   font-weight: 500;
-  background-color: #6658d3;
+  background-color: #011570;
   border-radius: 6px;
   color: #fff;
   border: 0;

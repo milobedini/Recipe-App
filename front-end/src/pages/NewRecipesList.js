@@ -20,13 +20,14 @@ const NewRecipesList = () => {
         b.createdAt > a.createdAt ? 1 : -1
       )
 
-      let newestThreeRecipes = [
+      let newestFourRecipes = [
         dateSortedData[0],
         dateSortedData[1],
         dateSortedData[2],
+        dateSortedData[3],
       ]
 
-      setNewRecipes(newestThreeRecipes)
+      setNewRecipes(newestFourRecipes)
     }
     fetchNewRecipes()
   }, [])
