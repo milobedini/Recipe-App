@@ -1,5 +1,5 @@
-import React from 'react'
-import '../styles/About.css'
+import React from "react"
+import "../styles/About.css"
 
 const About = () => {
   return (
@@ -7,8 +7,8 @@ const About = () => {
       <div className="welcome">
         <h1>Welcome to TasteBook</h1>
         <p>
-          Our MERN Stack Project which was completed as part of General Assembly
-          software engineering immersive course{' '}
+          Our MERN Stack Project which was completed as part of General
+          Assembly's software engineering immersive course{" "}
         </p>
       </div>
       <div className="about">

@@ -9,7 +9,7 @@ const ShoppingList = ({ items, removeItem, quantities }) => {
           <span>{quantities[index]}x</span>
           <span> {item}</span>
           <button className="list-delete" onClick={() => removeItem(item)}>
-            Remove item
+            Remove
           </button>
         </li>
       ))}

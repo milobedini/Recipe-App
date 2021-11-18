@@ -21,6 +21,8 @@
   padding: 20px 0 10px 0;
   background: #011570;
   text-align: center;
+  margin-right: 2rem;
+  width: 35%;
 }
 
 .shopping-list .header-title {
@@ -57,7 +59,7 @@
   border-radius: 100px;
 }
 .shopping-list .add-button {
-  /* float: right; */
+  padding: unset;
   height: 46px;
   width: 27.33333%;
   background: #ffc107;
@@ -149,8 +151,18 @@
   margin-left: 2rem;
 }
 
+div.container:nth-child(2) {
+  margin-left: 0px;
+}
+.shopping-list button .list-delete {
+  font-size: unset;
+}
+
 @media only screen and (max-width: 600px) {
   .shopping-list .main {
-    margin-left: 10px;
+    /* margin-left: 10px; */
+  }
+  .shopping-list .main {
+    flex-shrink: 0;
   }
 }

@@ -1,0 +1,21 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.profile h1 {
+  color: #011570;
+}
+
+.user-cards {
+  display: flex;
+  padding-left: 0px;
+}
+
+div.user-cards:nth-child(5) > ul:nth-child(1) {
+  padding-left: 0px;
+}
+
+div.user-cards:nth-child(3) > ul:nth-child(1) {
+  padding-left: 0px;
+}
