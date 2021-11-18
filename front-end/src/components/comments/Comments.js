@@ -2,7 +2,6 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { getAxiosRequestConfig } from '../../helpers/api'
 import { useState } from 'react'
-import { FaStar } from 'react-icons/fa'
 import ReactStars from 'react-rating-stars-component'
 
 const Comments = ({ refetch }) => {
@@ -74,13 +73,10 @@ const Comments = ({ refetch }) => {
           name="text"
           type="text"
           value={comment.text}
-          placeholder="Tell us what you think"
+          placeholder="Comments"
           onChange={handleFormChange}
           {...formInputProps}
         />
-        <div>
-          <input type="submit" value="Submit Review" />
-        </div>
         <div className="rating_section">
           <div className="rate_star">
             <div>
@@ -101,9 +97,12 @@ const Comments = ({ refetch }) => {
             </div>
           </div>
         </div>
+        <div>
+          <input type="submit" value="Submit Review" />
+        </div>
         {isError ? (
           <div className="error">
-            <p>Error. Please try again</p>
+            <p>Error. Please login to leave a review. </p>
           </div>
         ) : (
           <></>
