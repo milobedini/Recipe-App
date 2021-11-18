@@ -2,6 +2,26 @@
   text-align: center;
 }
 
+button {
+  cursor: pointer;
+  float: left;
+  margin: -5px;
+  padding: 5px 9px;
+  background: transparent;
+  box-shadow: 0 0 0 transparent;
+  border: 0 solid transparent;
+  text-shadow: 0 0 0 transparent;
+  font-size: 16px;
+}
+
+input {
+  padding-left: 10px;
+}
+
+button:hover {
+  color: lightcoral;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -39,8 +39,7 @@ const DeleteRecipe = ({ isLoggedIn, setIsLoggedIn }) => {
   if (isLoggedIn) {
     return (
       <div className="delete">
-        <h3>Delete Recipe</h3>
-        <button onClick={handleDelete}>Delete</button>
+        <button onClick={handleDelete}>Delete /</button>
       </div>
     )
   }
