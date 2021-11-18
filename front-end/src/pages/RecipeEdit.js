@@ -80,7 +80,12 @@ const RecipeEdit = () => {
               <h2 className="card-heading">Edit your recipe</h2>
             </div>
           </div>
-          <RecipeForm className="input-field" formInputProps={formInputProps} />
+          <RecipeForm
+            className="input-field"
+            formInputProps={formInputProps}
+            setData={setRecipe}
+            data={recipe}
+          />
           <div>
             <input className="action" type="submit" value="Edit Recipe" />
           </div>
