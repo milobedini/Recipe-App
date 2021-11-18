@@ -36,10 +36,10 @@
 .login .card-image {
   border-radius: 8px;
   overflow: hidden;
-  padding-bottom: 65%;
-  background-image: url("./images/saltpep.jpg");
+  padding-bottom: 60%;
+  background-image: url("./images/istockphoto-1207314556-612x612.jpg");
   background-repeat: no-repeat;
-  background-size: 150%;
+  background-size: 110%;
   background-position: 0 5%;
   position: relative;
 }
@@ -51,7 +51,7 @@
   right: 10%;
   font-size: 1.75rem;
   font-weight: 700;
-  color: #6658d3;
+  color: #007bff;
   line-height: 1.222;
 }
 .login small {
@@ -69,7 +69,7 @@
   flex-direction: column-reverse;
   position: relative;
   padding-top: 1.5rem;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
 }
 .login input label {
   color: #8597a3;
@@ -119,4 +119,21 @@
   display: block;
   color: #6658d3;
   text-decoration: none;
+}
+.login input {
+  font-size: 1.3rem;
+  transition: 1s ease;
+}
+.login input:focus {
+  background: coral;
+  color: #007bff;
+  transition: 1s ease;
+}
+
+.login .action:hover {
+  font-size: 1.2rem;
+  background: coral;
+  color: #6610f2;
+  transition: 1s ease;
+  cursor: pointer;
 }

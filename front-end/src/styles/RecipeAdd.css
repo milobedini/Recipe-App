@@ -86,7 +86,7 @@
   border-bottom-color: #6658d3;
 }
 .recipe-add label {
-  color: #6658d3;
+  color: #6610f2;
   transform: translateY(-1.5rem);
 }
 .recipe-add .action {
@@ -114,4 +114,34 @@
   display: block;
   color: #6658d3;
   text-decoration: none;
+}
+
+.recipe-add input {
+  transition: 1s ease;
+  background: hsl(247, 58%, 90%);
+  color: darkblue;
+}
+.recipe-add input:focus {
+  font-size: 1.2rem;
+  background: coral;
+  color: black;
+  transition: 1s ease;
+}
+.recipe-add .action:hover {
+  font-size: 1.2rem;
+  background: coral;
+  color: #6610f2;
+  transition: 1s ease;
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
