@@ -1,7 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+.recipe-show {
+  font-family: "DM Sans", sans-serif;
+}
+
 * {
   box-sizing: border-box;
 }
-
 .wrapper {
   margin: 5px;
 }
@@ -104,11 +109,85 @@ input {
   font-weight: bold;
 }
 
-input[type='radio'] {
+input[type="radio"] {
   display: none;
 }
 
 .star {
   cursor: pointer;
   transition: color 400ms;
+}
+
+.edit-delete {
+  display: flex;
+  justify-content: space-around;
+}
+
+.recipe-show .key-info {
+  padding-bottom: 3rem;
+}
+
+.recipe-show .delete,
+.recipe-show .edit {
+  color: #011570;
+}
+.like-button {
+  font-size: 2rem;
+}
+
+#heart-button {
+  transform: scale(1);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+.like-container {
+  display: flex;
+  justify-content: space-around;
+}
+.leave_review_section h3 {
+  font-size: 0.8rem;
+  max-width: 30;
+}
+
+.review-input label {
+  color: #011570;
+  transition: 0.25s ease;
+}
+.review-input {
+  transition: 1s ease;
+  background: hsl(247, 58%, 90%);
+  color: #011570;
+}
+
+.recipe-show .action {
+  background-color: #011570;
+  color: white;
+}
+.recipe.show .action:hover {
+  cursor: pointer;
+}
+.leave-review-heading {
+  max-width: 40%;
+}
+.delete button:hover {
+  color: coral;
+}
+.top_section {
+  margin-bottom: 0.5rem;
+}
+
+.recipe-show .action {
+  cursor: pointer;
 }

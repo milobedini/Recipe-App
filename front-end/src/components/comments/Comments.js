@@ -1,13 +1,13 @@
-import axios from 'axios'
-import { useParams } from 'react-router-dom'
-import { getAxiosRequestConfig } from '../../helpers/api'
-import { useState } from 'react'
-import ReactStars from 'react-rating-stars-component'
+import axios from "axios"
+import { useParams } from "react-router-dom"
+import { getAxiosRequestConfig } from "../../helpers/api"
+import { useState } from "react"
+import ReactStars from "react-rating-stars-component"
 
 const Comments = ({ refetch }) => {
   const [rating, setRating] = useState(true)
   const [comment, setComment] = useState({
-    text: '',
+    text: "",
     rating: null,
   })
 
@@ -29,10 +29,10 @@ const Comments = ({ refetch }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log('handleSubmit')
+    console.log("handleSubmit")
 
     if (!comment.rating) {
-      alert('Please give a rating')
+      alert("Please give a rating")
       return
     }
     try {
@@ -42,7 +42,7 @@ const Comments = ({ refetch }) => {
       console.log(response)
       if (response.status > 199 && response.status < 300) {
         setComment({
-          text: '',
+          text: "",
           rating: null,
         })
         setRating(false)
@@ -70,6 +70,7 @@ const Comments = ({ refetch }) => {
     <section>
       <form className="review" onSubmit={handleSubmit}>
         <input
+          className="review-input"
           name="text"
           type="text"
           value={comment.text}
@@ -98,7 +99,7 @@ const Comments = ({ refetch }) => {
           </div>
         </div>
         <div>
-          <input type="submit" value="Submit Review" />
+          <input className="action" type="submit" value="Submit Review" />
         </div>
         {isError ? (
           <div className="error">
