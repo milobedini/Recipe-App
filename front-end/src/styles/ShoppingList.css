@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 .shopping-list {
-  margin: 0 auto;
+  margin: auto;
   font-family: "DM Sans", sans-serif;
   height: 100%;
-  background: #9575cd;
+  background: #011570;
   color: #ffffff;
   height: 100vh;
   display: flex;
   justify-content: baseline;
+  border-top: 2px solid #011570;
 }
 
 .shopping-list .container {
@@ -18,14 +19,14 @@
 
 .shopping-list header {
   padding: 20px 0 10px 0;
-  background: #4527a0;
+  background: #011570;
   text-align: center;
 }
 
 .shopping-list .header-title {
   margin: 0;
   padding-bottom: 0;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 300;
 }
 
@@ -72,7 +73,10 @@
 .shopping-list .add-button {
   margin-bottom: 16px;
 }
-
+.shopping-list,
+.main {
+  background: white;
+}
 .shopping-list .list {
   padding: 0;
   list-style-type: none;
@@ -128,4 +132,25 @@
 .shopping-list .form {
   margin: 0;
   padding: 0;
+}
+.shopping-list .sub-input {
+  transition: 1s ease;
+  background: hsl(247, 58%, 90%);
+  color: darkblue;
+}
+
+.shopping-list .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 100px;
+  margin: 0;
+  padding: 0;
+  margin-left: 2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .shopping-list .main {
+    margin-left: 10px;
+  }
 }
