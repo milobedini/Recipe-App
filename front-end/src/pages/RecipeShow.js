@@ -65,8 +65,8 @@ const RecipeShow = () => {
           <div className="info">
             <h2 className="top_section_text">{recipe.name}</h2>
             <div className="key-info">
-              <p className="top_section_text">
-                Average Rating: {recipe.averageRating}
+              <p className="top_section_text star-rating">
+                ⭐️ {recipe.averageRating} ⭐️
               </p>
               <p className="top_section_text">
                 Preparation Time: {recipe.prepTime}

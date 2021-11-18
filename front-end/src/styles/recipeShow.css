@@ -191,3 +191,46 @@ input[type="radio"] {
 .recipe-show .action {
   cursor: pointer;
 }
+.star-rating {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #011570;
+}
+
+@media only screen and (max-width: 600px) {
+  .recipe-show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+  }
+  .recipe-show h2 {
+    font-size: 1rem;
+  }
+  .recipe-show .top_section {
+    margin-top: 0;
+  }
+  .recipe-show img {
+    height: 10rem;
+    width: 10rem;
+  }
+  .leave_review_section {
+    display: flex;
+    flex-direction: column;
+  }
+  .ingredients_and_method {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .recipe_ingredients {
+    display: flex;
+    flex-direction: column;
+  }
+  .recipe-show .leave-review-heading {
+    max-width: 80%;
+  }
+}
