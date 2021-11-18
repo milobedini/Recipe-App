@@ -1,5 +1,6 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap') * {
   box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .wrapper {
@@ -18,7 +19,7 @@
 .top_section img {
   border-radius: 6px;
   display: block;
-  height: 400px;
+  height: 300px;
 }
 
 .ingredients_and_method {

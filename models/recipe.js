@@ -34,7 +34,7 @@ const recipeSchema = new mongoose.Schema(
 )
 
 recipeSchema.virtual('averageRating').get(function () {
-  if (!this.comments.length) return 'Currently unrated'
+  if (!this.comments.length) return 'Unrated'
   const sumOfRatings = this.comments.reduce((acc, comment) => {
     if (!comment.rating) return acc
     return acc + comment.rating

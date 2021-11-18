@@ -14,32 +14,32 @@ const RecipeCard = ({
   return (
     <>
       <div className="ind_card">
-        <img src={image} alt={name} />
-        <div className="top_row">
-          <div className="card_icons">
-            <div>
-              <p>
-                {likedBy.length} <FaHeart />
-              </p>
+        <Link to={`/recipes/${_id}`}>
+          <img src={image} alt={name} />
+          <div className="top_row">
+            <div className="card_icons">
+              <div>
+                <p>
+                  {likedBy.length} <FaHeart />
+                </p>
+              </div>
+              <div>
+                <p>
+                  {averageRating} <FaStar />
+                </p>
+              </div>
             </div>
-            <div>
+            <div className="top_row_right">
               <p>
-                {averageRating} <FaStar />
+                <FaRegClock /> {cookTime} Mins
               </p>
+              <p>Difficulty: {difficulty}</p>
             </div>
           </div>
-          <div className="top_row_right">
-            <p>
-              <FaRegClock /> {cookTime} mins
-            </p>
-            <p>difficulty: {difficulty}</p>
+          <div className="title">
+            <h3>{name}</h3>
           </div>
-        </div>
-        <div className="title">
-          <h3>
-            <Link to={`/recipes/${_id}`}>{name}</Link>
-          </h3>
-        </div>
+        </Link>
       </div>
     </>
   )
