@@ -20,13 +20,14 @@ const BestRecipeList = () => {
         a.averageRating > b.averageRating ? 1 : -1
       )
 
-      let bestThreeRecipes = [
+      let bestFourRecipes = [
         ratingSortedData[0],
         ratingSortedData[1],
         ratingSortedData[2],
+        ratingSortedData[3],
       ]
 
-      setBestRecipes(bestThreeRecipes)
+      setBestRecipes(bestFourRecipes)
     }
     fetchNewRecipes()
   }, [])
