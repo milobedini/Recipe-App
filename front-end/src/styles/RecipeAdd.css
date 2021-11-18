@@ -47,7 +47,7 @@
 .recipe-add .card-heading {
   position: absolute;
   left: 2%;
-  top: 40%;
+  top: 50%;
   right: 10%;
   font-size: 1.75rem;
   font-weight: 700;
@@ -67,7 +67,7 @@
   margin-top: 0.5rem;
 }
 .recipe-add input label {
-  color: #8597a3;
+  color: #011570;
   transition: 0.25s ease;
 }
 
@@ -86,7 +86,7 @@
   border-bottom-color: #6658d3;
 }
 .recipe-add label {
-  color: #6610f2;
+  color: #011570;
   /* transform: translateY(-1.5rem); */
 }
 .recipe-add .action {
@@ -95,7 +95,7 @@
   font-size: 1.25rem;
   padding: 1em;
   font-weight: 500;
-  background-color: #6658d3;
+  background-color: #011570;
   border-radius: 6px;
   color: #fff;
   border: 0;
@@ -123,14 +123,14 @@
 }
 .recipe-add input:focus {
   font-size: 1.2rem;
-  background: coral;
-  color: black;
+  background: #011570;
+  color: white;
   transition: 1s ease;
 }
 .recipe-add .action:hover {
   font-size: 1.2rem;
   background: coral;
-  color: #6610f2;
+  color: #011570;
   transition: 1s ease;
   cursor: pointer;
 }
