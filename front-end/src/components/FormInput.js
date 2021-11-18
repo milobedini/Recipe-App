@@ -2,7 +2,6 @@ const FormInput = ({
   name,
   type,
   placeholder,
-  // data,
   errorInfo,
   handleFormChange,
 }) => {
@@ -13,7 +12,6 @@ const FormInput = ({
         type={type}
         id={name}
         name={name}
-        // value={data[name]}
         onChange={handleFormChange}
       />
       {errorInfo.errors?.[name] ? (

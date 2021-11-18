@@ -20,7 +20,6 @@ const RecipeAdd = () => {
     servings: 0,
     calories: 0,
     allergens: [],
-    video: "",
   })
 
   const [errorInfo, setErrorInfo] = useState({})
@@ -65,7 +64,12 @@ const RecipeAdd = () => {
               <h2 className="card-heading">Add your recipe below:</h2>
             </div>
           </div>
-          <RecipeForm className="input-field" formInputProps={formInputProps} />
+          <RecipeForm
+            className="input-field"
+            formInputProps={formInputProps}
+            setData={setData}
+            data={data}
+          />
           <div>
             <input className="action" type="submit" value="Add Recipe" />
           </div>

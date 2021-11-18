@@ -111,14 +111,11 @@ const RecipeShow = () => {
       </div>
       <div>
         <div className="leave_review_section">
-          <h3>What do you think of {recipe.name}?</h3>
+          <h3>We would love to know what you think of {recipe.name}?</h3>
           <div className="leave_review">
             <Comments refetch={() => fetchRecipe(id)} />
           </div>
           <div className="rating_section">
-            <div>
-              <h3></h3>
-            </div>
             <div className="rate_star"></div>
           </div>
         </div>
