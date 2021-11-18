@@ -87,7 +87,7 @@
 }
 .recipe-add label {
   color: #6610f2;
-  transform: translateY(-1.5rem);
+  /* transform: translateY(-1.5rem); */
 }
 .recipe-add .action {
   margin-top: 2rem;

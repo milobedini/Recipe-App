@@ -1,7 +1,7 @@
-import React from 'react'
-import FormInput from './FormInput.js'
-import { ImageUploadField } from './ImageUploadField.js'
-import { useState } from 'react'
+import React from "react"
+import FormInput from "./FormInput.js"
+import { ImageUploadField } from "./ImageUploadField.js"
+import { useState } from "react"
 
 const RecipeForm = ({ formInputProps, setData, data }) => {
   const handleImageUrl = (url) => {

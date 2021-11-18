@@ -45,7 +45,7 @@ const Login = ({ setIsLoggedIn }) => {
   const formInputProps = { data, errorInfo, handleFormChange }
 
   return (
-    <div className="container" className="login">
+    <div className="container login">
       <div className="form">
         <form className="card-form" onSubmit={handleSubmit}>
           <div className="card">

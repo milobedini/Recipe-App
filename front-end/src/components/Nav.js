@@ -29,7 +29,15 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
         {isLoggedIn ? (
           <>
             <li>
-              <Link to="/recipes/new">Add a Recipe, plus sign.</Link>
+              <Link to="/recipes/new">
+                <div id="circle-plus">
+                  <div id="nav-icon3-plus">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </Link>
             </li>
             <li>
               <button onClick={handleLogout}>Logout</button>
