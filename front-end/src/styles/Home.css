@@ -11,3 +11,8 @@
 .homepage .subtitle {
   padding-left: 30px;
 }
+
+.home-featured ul {
+  flex-wrap: wrap;
+  padding-left: 0;
+}
