@@ -21,10 +21,10 @@ const BestRecipeList = () => {
       )
 
       let bestFourRecipes = [
-        ratingSortedData[0],
-        ratingSortedData[1],
-        ratingSortedData[2],
         ratingSortedData[3],
+        ratingSortedData[2],
+        ratingSortedData[1],
+        ratingSortedData[0],
       ]
 
       setBestRecipes(bestFourRecipes)
