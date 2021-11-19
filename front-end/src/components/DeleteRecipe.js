@@ -3,6 +3,7 @@ import { getToken } from "../helpers/auth"
 import { useState } from "react"
 import axios from "axios"
 import { useParams, useNavigate } from "react-router-dom"
+import { ImBin } from "react-icons/im"
 
 const DeleteRecipe = ({ isLoggedIn, setIsLoggedIn }) => {
   const [errorInfo, setErrorInfo] = useState({})
@@ -40,7 +41,7 @@ const DeleteRecipe = ({ isLoggedIn, setIsLoggedIn }) => {
     return (
       <div className="delete">
         <button className="delete" onClick={handleDelete}>
-          Delete
+          <ImBin />
         </button>
       </div>
     )

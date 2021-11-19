@@ -24,11 +24,13 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
     navigate("/")
   }
   return (
-    <nav>
+    <nav className="nav">
       <ul>
         <li>
           <div className="logo">
-            <img src={logo} alt="logo" size="small" />
+            <Link to="/">
+              <img src={logo} alt="logo" size="small" />
+            </Link>
           </div>
         </li>
         <li>
