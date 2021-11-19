@@ -14,8 +14,7 @@ const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
     navigate("/")
   }
   return (
-    <nav>
-      
+    <nav className="nav">
       <ul>
         <li>
         <div className="logo">

@@ -158,7 +158,7 @@ const RecipeShow = () => {
                         {name === review.username ? (
                           <span onClick={(e) => handleClose(review._id)}>
                             <Button variant="outline-primary" size="sm">
-                              <ImBin />
+                              Delete
                             </Button>
                           </span>
                         ) : null}

@@ -1,5 +1,4 @@
-nav {
-}
+
 ul {
   list-style: none;
   display: flex;
@@ -21,7 +20,7 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
-  .shopping-list .main {
-    margin-left: 10px;
+  .nav .main {
+    margin-left: 5px;
   }
 }

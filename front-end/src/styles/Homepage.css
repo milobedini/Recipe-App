@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
+.banner {
+  width:100%
+}
 
 
+img {
+  width:100%
+}
 
 
 @media only screen and (max-width: 600px) {
