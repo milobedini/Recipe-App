@@ -11,12 +11,12 @@ const Home = () => {
       <div className="banner">
         <img src={banner} alt="tastebook banner" />
       </div>
-      <h2>Featured Content below:</h2>
-      <h3>Most recent recipes</h3>
+      <h2 className="featured">Featured Content below:</h2>
+      <h3 className="subtitle">Most recent recipes</h3>
       <NewRecipesList />
-      <h3>Top rated recipes</h3>
+      <h3 classname="subtitle">Top rated recipes</h3>
       <BestRecipeList />
-      <h3>Most liked recipes</h3>
+      <h3 classname="subtitle">Most liked recipes</h3>
       <MostLikedRecipes />
     </div>
   )

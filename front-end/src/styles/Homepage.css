@@ -1,4 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+.homepage .title{
+  margin: auto;
+  font-family: "DM Sans", sans-serif;
+  height: 100%;
+  background: #011570;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  justify-content: baseline;
+  border-top: 2px solid #011570
+}
 
 .banner {
   width:100%
