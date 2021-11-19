@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 
 * {
   box-sizing: border-box;
@@ -28,27 +28,31 @@
 }
 
 #info {
-  font-family: 'Londrina Shadow', cursive;
+  font-family: "Londrina Shadow", cursive;
   font-size: 150%;
   font-weight: bold;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 .about h1 {
-  font-family: 'Londrina Shadow', cursive;
+  font-family: "Londrina Shadow", cursive;
   font-size: 2rem;
   font-weight: bold;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
+  color: #011570;
 }
 .about h2 {
-  font-family: 'Londrina Shadow', cursive;
+  font-family: "Londrina Shadow", cursive;
   font-size: 150%;
   font-weight: bold;
-  font-family: 'DM Sans', sans-serif;
-  margin: 5px;
+  font-family: "DM Sans", sans-serif;
+  margin: 30px 5px 30px 5px;
 }
 
-.welcome h1,
-p {
+.about .welcome h1,
+.about p {
   text-align: center;
+}
+.about .welcome {
+  margin-bottom: 30px;
 }

@@ -3,12 +3,12 @@ import "../styles/About.css"
 
 const About = () => {
   return (
-    <div>
+    <div className="about">
       <div className="welcome">
         <h1>Welcome to TasteBook</h1>
         <p>
           Our MERN Stack Project which was completed as part of General
-          Assembly's software engineering immersive course{" "}
+          Assembly's software engineering immersive course.
         </p>
       </div>
       <div className="about">

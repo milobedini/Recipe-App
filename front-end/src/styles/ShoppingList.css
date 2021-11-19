@@ -21,7 +21,7 @@
   padding: 20px 0 10px 0;
   background: #011570;
   text-align: center;
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
   width: 35%;
 }
 
@@ -144,11 +144,10 @@
 .shopping-list .main {
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-right: 100px;
   margin: 0;
   padding: 0;
-  margin-left: 2rem;
+  padding-left: 1rem;
 }
 
 div.container:nth-child(2) {
@@ -156,6 +155,10 @@ div.container:nth-child(2) {
 }
 .shopping-list button .list-delete {
   font-size: unset;
+}
+
+.add-button {
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
