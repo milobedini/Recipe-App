@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import axios from "axios"
 import "../styles/recipeShow.css"
 import { FaStar } from "react-icons/fa"
-import { ImPencil, ImBin } from "react-icons/im"
+import { ImPencil, ImBin, ImCross } from "react-icons/im"
 import Comments from "../components/comments/Comments"
 import Likes from "../components/likes/Likes"
 import { getToken } from "../helpers/auth"
@@ -85,7 +85,9 @@ const RecipeShow = () => {
               </div>
               {isLoggedIn ? (
                 <button className="edit">
-                  <Link to={`/recipes/${id}/edit`}><ImPencil /></Link>
+                  <Link to={`/recipes/${id}/edit`}>
+                    <ImPencil />
+                  </Link>
                 </button>
               ) : (
                 <></>
@@ -162,7 +164,7 @@ const RecipeShow = () => {
                               variant="outline-primary"
                               size="sm"
                             >
-                              Delete
+                              <ImCross />
                             </Button>
                           </span>
                         ) : null}
