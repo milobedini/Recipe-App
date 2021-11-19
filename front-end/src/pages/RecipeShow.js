@@ -156,7 +156,11 @@ const RecipeShow = () => {
                         </div>
                         {name === review.username ? (
                           <span onClick={(e) => handleClose(review._id)}>
-                            <Button variant="outline-primary" size="sm">
+                            <Button
+                              className="delete-button"
+                              variant="outline-primary"
+                              size="sm"
+                            >
                               Delete
                             </Button>
                           </span>

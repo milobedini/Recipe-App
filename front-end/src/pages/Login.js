@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { login } from "../helpers/api.js"
-import { setToken } from "../helpers/auth.js"
+import { setToken, setUser } from "../helpers/auth.js"
 import FormInput from "../components/FormInput"
 import "../styles/Login.css"
 
@@ -22,6 +22,7 @@ const Login = ({ setIsLoggedIn }) => {
 
   const handleSuccessfulLogin = ({ token }) => {
     setToken(token)
+    setUser(data.username)
     setIsLoggedIn(true)
     setIsError(false)
     navigate("/")
