@@ -100,9 +100,11 @@ const Likes = ({ isLoggedIn, setIsLoggedIn }) => {
 
   if (!isLoggedIn) {
     return (
-      <div>
-        <h2>Please login to like this recipe</h2>
-        <h3>Current like number: {likeNumber}</h3>
+      <div className="like-container">
+        <h3>{likeNumber} ♥️ </h3>
+        <div>
+          <h5>Please login to like this recipe</h5>
+        </div>
       </div>
     )
   }

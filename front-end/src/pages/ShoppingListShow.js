@@ -27,11 +27,13 @@ const ShoppingListShow = () => {
       </header>
       <div className="container main">
         <ShoppingListInput addItem={addItem} addQuantity={addQuantity} />
-        <ShoppingList
-          items={items}
-          removeItem={removeItem}
-          quantities={quantities}
-        />
+        <div className="list-results">
+          <ShoppingList
+            items={items}
+            removeItem={removeItem}
+            quantities={quantities}
+          />
+        </div>
       </div>
     </div>
   )
