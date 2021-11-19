@@ -1,13 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
 * {
   box-sizing: border-box;
 }
 
+.about_wrapper {
+  max-width: 600px;
+}
+
 .profiles {
   display: flex;
   justify-content: space-around;
-  gap: 10rem;
+  gap: 2rem;
   text-align: center;
 }
 .about {
@@ -28,24 +32,24 @@
 }
 
 #info {
-  font-family: "Londrina Shadow", cursive;
+  font-family: 'Londrina Shadow', cursive;
   font-size: 150%;
   font-weight: bold;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .about h1 {
-  font-family: "Londrina Shadow", cursive;
+  font-family: 'Londrina Shadow', cursive;
   font-size: 2rem;
   font-weight: bold;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   color: #011570;
 }
 .about h2 {
-  font-family: "Londrina Shadow", cursive;
+  font-family: 'Londrina Shadow', cursive;
   font-size: 150%;
   font-weight: bold;
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
   margin: 30px 5px 30px 5px;
 }
 
@@ -54,5 +58,13 @@
   text-align: center;
 }
 .about .welcome {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media screen and (min-width: 600px) {
+  .about_wrapper {
+    width: 100%;
+  }
 }
