@@ -1,0 +1,13 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  background: #011570;
+  padding: 40px;
+}
+.banner img {
+  width: 400px;
+  border: 2px solid white;
+}
+.homepage .subtitle {
+  padding-left: 30px;
+}
