@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
 
-* {
-    box-sizing: border-box;
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .homepage .main {
+    margin-left: 10px;
   }
+}

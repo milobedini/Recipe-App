@@ -20,5 +20,8 @@ a {
   text-decoration: none;
 }
 
-
-
+@media only screen and (max-width: 600px) {
+  .shopping-list .main {
+    margin-left: 10px;
+  }
+}
