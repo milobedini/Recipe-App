@@ -1,7 +1,5 @@
 # Recipe-App
 
-Evelina was here?
+TasteBook by Evelina, Milo and Yin-Wai
 
-As was Milo.
-
-Lets try again evelina
+MERN Full-Stack GA Project 3
