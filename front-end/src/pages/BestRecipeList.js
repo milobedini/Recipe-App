@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
-import axios from "axios"
-import RecipeCard from "../components/RecipeCard"
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import RecipeCard from '../components/RecipeCard'
 
 const BestRecipeList = () => {
   const [bestRecipes, setBestRecipes] = useState([])
@@ -8,8 +8,8 @@ const BestRecipeList = () => {
   useEffect(() => {
     async function fetchNewRecipes() {
       const config = {
-        method: "get",
-        url: "/api/recipes",
+        method: 'get',
+        url: '/api/recipes',
         headers: {},
       }
 
@@ -20,12 +20,7 @@ const BestRecipeList = () => {
         a.averageRating > b.averageRating ? 1 : -1
       )
 
-      let bestFourRecipes = [
-        ratingSortedData[3],
-        ratingSortedData[2],
-        ratingSortedData[1],
-        ratingSortedData[0],
-      ]
+      let bestFourRecipes = ratingSortedData.slice(0, 4).reverse()
 
       setBestRecipes(bestFourRecipes)
     }

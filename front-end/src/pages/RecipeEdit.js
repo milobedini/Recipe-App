@@ -72,7 +72,6 @@ const RecipeEdit = () => {
   }
 
   const handleSubmit = async (event) => {
-    // event.preventDefault()
     const config = getAxiosRequestConfig(`recipes/${id}`, recipe, 'put')
     navigate(`/recipes/${id}`)
     try {

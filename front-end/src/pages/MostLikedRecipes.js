@@ -1,7 +1,7 @@
-import React from "react"
-import { useState, useEffect } from "react"
-import axios from "axios"
-import RecipeCard from "../components/RecipeCard"
+import React from 'react'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
+import RecipeCard from '../components/RecipeCard'
 
 const MostLikedRecipes = () => {
   const [likedRecipes, setLikedRecipes] = useState([])
@@ -9,8 +9,8 @@ const MostLikedRecipes = () => {
   useEffect(() => {
     async function fetchLikedRecipes() {
       const config = {
-        method: "get",
-        url: "/api/recipes",
+        method: 'get',
+        url: '/api/recipes',
         headers: {},
       }
 
@@ -21,12 +21,7 @@ const MostLikedRecipes = () => {
         b.likedBy.length > a.likedBy.length ? 1 : -1
       )
 
-      let mostLikedFourRecipes = [
-        likedSortedData[0],
-        likedSortedData[1],
-        likedSortedData[2],
-        likedSortedData[3],
-      ]
+      let mostLikedFourRecipes = likedSortedData.slice(0, 4)
 
       setLikedRecipes(mostLikedFourRecipes)
     }

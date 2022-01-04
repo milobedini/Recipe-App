@@ -1,7 +1,7 @@
-import React from "react"
-import RecipeCard from "../components/RecipeCard"
-import { useState, useEffect } from "react"
-import axios from "axios"
+import React from 'react'
+import RecipeCard from '../components/RecipeCard'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const NewRecipesList = () => {
   const [newRecipes, setNewRecipes] = useState([])
@@ -9,8 +9,8 @@ const NewRecipesList = () => {
   useEffect(() => {
     async function fetchNewRecipes() {
       const config = {
-        method: "get",
-        url: "/api/recipes",
+        method: 'get',
+        url: '/api/recipes',
         headers: {},
       }
 
@@ -20,12 +20,7 @@ const NewRecipesList = () => {
         b.createdAt > a.createdAt ? 1 : -1
       )
 
-      let newestFourRecipes = [
-        dateSortedData[0],
-        dateSortedData[1],
-        dateSortedData[2],
-        dateSortedData[3],
-      ]
+      let newestFourRecipes = dateSortedData.slice(0, 4)
 
       setNewRecipes(newestFourRecipes)
     }

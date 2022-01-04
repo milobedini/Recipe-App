@@ -1,29 +1,27 @@
-import mongoose from "mongoose"
-import uniqueValidator from "mongoose-unique-validator"
-import bcrypt from "bcrypt"
+import mongoose from 'mongoose'
+import uniqueValidator from 'mongoose-unique-validator'
+import bcrypt from 'bcrypt'
 
 const userSchema = new mongoose.Schema({
   username: { type: String, unique: true, required: true, maxlength: 30 },
   email: { type: String, unique: true, required: true },
   password: { type: String, required: true },
-  // likedRecipes: [{ type: mongoose.Schema.ObjectId, ref: "Recipe" }],
-  //on users, array of likedRecipes with recipe ids
 })
-userSchema.virtual("createdRecipes", {
-  ref: "Recipe",
-  localField: "_id",
-  foreignField: "owner",
+userSchema.virtual('createdRecipes', {
+  ref: 'Recipe',
+  localField: '_id',
+  foreignField: 'owner',
   justOne: false,
 })
 
-userSchema.virtual("likedRecipes", {
-  ref: "Recipe",
-  localField: "_id",
-  foreignField: "likedBy",
+userSchema.virtual('likedRecipes', {
+  ref: 'Recipe',
+  localField: '_id',
+  foreignField: 'likedBy',
   justOne: false,
 })
 
-userSchema.set("toJSON", {
+userSchema.set('toJSON', {
   virtuals: true,
   transform(_doc, json) {
     delete json.password
@@ -31,22 +29,22 @@ userSchema.set("toJSON", {
   },
 })
 
-userSchema.virtual("passwordConfirmation").set(function (passwordConfirmation) {
+userSchema.virtual('passwordConfirmation').set(function (passwordConfirmation) {
   this._passwordConfirmation = passwordConfirmation
 })
 
-userSchema.pre("validate", function (next) {
+userSchema.pre('validate', function (next) {
   if (
-    this.isModified("password") &&
+    this.isModified('password') &&
     this.password !== this._passwordConfirmation
   ) {
-    this.invalidate("passwordConfirmation", "Passwords do not match")
+    this.invalidate('passwordConfirmation', 'Passwords do not match')
   }
   next()
 })
 
-userSchema.pre("save", function (next) {
-  if (this.isModified("password")) {
+userSchema.pre('save', function (next) {
+  if (this.isModified('password')) {
     this.password = bcrypt.hashSync(this.password, bcrypt.genSaltSync())
   }
   next()
@@ -58,4 +56,4 @@ userSchema.methods.validatePassword = function (password) {
 
 userSchema.plugin(uniqueValidator)
 
-export default mongoose.model("User", userSchema)
+export default mongoose.model('User', userSchema)
