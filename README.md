@@ -35,7 +35,7 @@ Clone or download the repository and run the following within the terminal:
 * Express
 * Nodemon
 * Bcrypt
-* Jsonwebtoken
+* JSON Web Token
 
 ### Front-End
 * React
