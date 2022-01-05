@@ -1,7 +1,7 @@
 # TasteBook - SEI Project 3
 
 # Overview
-TasteBook is a Full-Stack MERN (MongoDB, Express, React and Node) application with CRUD functionality. The project was created over a one week period in a group of three ([Evelina Kireilyte](https://github.com/evelinakireilyte) and [Yin-wai Tse](https://github.com/yin-wai)). TasteBook is a recipe-based app with social media type features using our own RESTful API. 
+TasteBook is a Full-Stack MERN (MongoDB, Express, React and Node) application with CRUD functionality. The project was created over a one week period in a group of three (with [Evelina Kireilyte](https://github.com/evelinakireilyte) and [Yin-wai Tse](https://github.com/yin-wai)). TasteBook is a recipe-based app with social media type features using our own RESTful API. 
 
 ## Deployed -> [Tastebook](https://tastebook-yem.herokuapp.com/)
 
