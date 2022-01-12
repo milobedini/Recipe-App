@@ -70,7 +70,7 @@ The final planning step was to split up the various tasks and create a timeline 
 #### Asana
 <img width="1477" alt="Screenshot 2022-01-04 at 09 12 48" src="https://user-images.githubusercontent.com/89992629/148050567-4e1eca6b-e17f-46a8-8a7c-2b71fd16f1c5.png">
 
-It was agreed that the back-end setup process should be worked through together due to the importance of fully understanding its structure. Naturally there then followed some tweaking by individuals to adjust to the front-end needs and mutating feature desires. My personal responsibilities will be outlined later on. Finally, we also agreed to do a stand up to begin and end the day to ensure we knew how each other were getting on, and if there was any way that we could help with any issues.
+It was agreed that the back-end setup process should be worked through together due to the importance of fully understanding its structure. Naturally, there was some tweaking by individuals throughout the project to adjust to the front-end needs and mutating feature desires. My personal responsibilities will be outlined later on. Finally, we also agreed to do a stand up to begin and end the day to ensure we knew how each other were getting on, and if there was any way that we could help with any issues.
 
 ## 2) Back-End
 The recipe and user models were set up with Mongoose, and they incorporated the following relationships attached to their schemas:
