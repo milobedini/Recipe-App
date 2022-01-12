@@ -57,7 +57,7 @@ Clone or download the repository and run the following within the terminal:
 # Approach
 
 ## 1) Planning
-After agreeing on creating a recipe-based app, we determined the features that TasteBook should have, as well as creating various wireframes. It was decided that only two models (recipe and user) were actually needed, but with various embedded and reference relationships. In terms of functionality it was agreed that the full range of CRUD for recipes was a must, as well as additional features of the user being able to favourite, comment on, and rate each recipe. Obviously authentication was also a must, and that the user should be able to view the recipes that they have added to the web-app. Finally, pages for a custom shopping list generator and an about section were incorporated. 
+After agreeing on creating a recipe-based app, we determined the features that TasteBook should have, as well as creating various wireframes. It was decided that only two models (recipe and user) were actually needed, but with various embedded and reference relationships. In terms of functionality, it was agreed that the full range of CRUD for recipes was a must, as well as additional features of the user being able to favourite, comment on, and rate each recipe. Obviously authentication was also a must, and that the user should be able to view the recipes that they have added to the web-app. Finally, pages for a custom shopping list generator and an about section were incorporated. 
 
 #### Wireframe - Home Page
 <img width="815" alt="Screenshot 2022-01-04 at 09 08 50" src="https://user-images.githubusercontent.com/89992629/148050525-3b9d1cdb-7cab-4d2c-8309-73749c932240.png">
@@ -106,7 +106,7 @@ The creation of the home page required sorting all of the recipes for three diff
 <img width="540" alt="Screenshot 2022-01-04 at 11 20 51" src="https://user-images.githubusercontent.com/89992629/148051808-3883473e-53d6-484d-911b-1c73387d8740.png">
 
 ### User Profile Page
-The profile page was a similar task, and required displaying the current user’s username, their favourited recipes and their added recipes. For this the hard work was done by the back-end by populating the user JSON response with these recipes.
+The profile page was a similar task, and required displaying the current user’s username, their favourited recipes and their added recipes. For this, the hard work was done by the back-end by populating the user JSON response with these recipes.
 
 #### Code Snippet - User’s Liked Recipes
 <img width="470" alt="Screenshot 2022-01-04 at 09 55 03" src="https://user-images.githubusercontent.com/89992629/148050805-94a593e3-cc57-4344-83f7-d2e1d0b81872.png">
